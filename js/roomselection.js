@@ -1,5 +1,5 @@
 
-var ThemesList = [{theme: "joker", video: "https://youtu.be/-FKe4vQ4dME"},//../assets/videos/jokerthemevideo.mp4"},
+var ThemesList = [{theme: "joker", video: "../assets/videos/jokerthemevideo.mp4"},
 {theme: "clouds", video: "../assets/videos/cloudsthemevideo.mp4"},
 {theme: "greenspace", video: "../assets/videos/greenthemevideo.mp4"} ];
 
