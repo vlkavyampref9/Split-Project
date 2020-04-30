@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+	<!-- Required meta tags -->
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- Custom CSS styles-->
+	<link rel="stylesheet" href="../css/style.css">
+
+	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+	<link rel="stylesheet" href="../bootstrap/4/pulse/bootstrap.min.css" />
+	<script src="../dmxAppConnect/dmxBackgroundVideo/dmxBackgroundVideo.js" defer=""></script>
+	<script src="../dmxAppConnect/dmxBootstrap4Tooltips/dmxBootstrap4Tooltips.js" defer=""></script>
+	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/medium-editor.css" />
+	<script src="../dmxAppConnect/dmxMediumEditor/medium-editor.js" defer=""></script>
+	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.css" />
+	<script src="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js" defer=""></script>
+	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/themes/default.css" />
+	<script src="../dmxAppConnect/dmxVideo/dmxVideo.js" defer=""></script>
+</head>
+
+<body id="index" is="dmx-app" >
+
+	<section id="VoiceRoom" class="mt-n5">
+		<video is="dmx-video" id="voiceroomvideo" autoplay muted width="100%" height="auto" src="" preload="auto" loop controls></video>
+			
+		<div id="controls" class="container mw-100">
+			<div class="row justify-content-center">
+				<button id="recordButton" class="btn btn-outline-primary btn-lg text-primary font-weight-bold text-lg-center text-uppercase bg-light mr-lg-2" data-toggle="button">RECORD</button>
+				<button id="pauseButton" class="btn btn-outline-primary btn-lg text-primary font-weight-bold text-lg-center text-uppercase bg-light mr-lg-2" data-toggle="button">PAUSE</button>
+				<button id="stopButton" class="btn btn-outline-primary btn-lg text-primary font-weight-bold text-lg-center text-uppercase bg-light" data-toggle="button">STOP</button>
+			</div>
+			<div id="formats">Format: start recording to see sample rate</div>
+			<p><strong>Recordings:</strong></p>
+			<ol id="recordingsList"></ol>
+		</div>
+	</section>
+
+
+
+	<footer id="page-footer" class="bg-dark">
+		<div class="container"> <span class="text-muted">Copyright www.split.com</span> </div>
+	</footer>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="../bootstrap/4/js/popper.min.js"></script>
+	<script src="../bootstrap/4/js/bootstrap.min.js"></script>	
+	<script src="../js/voiceroom.js"></script>	
+	<script src="../js/recorder.js"></script>
+	<script src="../js/audiorecord.js"></script>
+
+</body>
+
+</html>

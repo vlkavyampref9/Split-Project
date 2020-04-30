@@ -1,0 +1,177 @@
+/* CSS Document */
+body {
+	padding-top: 55px;
+}
+#page-header {
+	padding-top: 120px;
+    background: linear-gradient(135deg, #35b8b0 0%,#1c799d 100%);
+}
+#header-text {
+	color: #fff;
+}
+#header-img > img {
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
+            box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
+}
+section {
+	padding: 40px 0;
+	position: relative;
+}
+h3.section-title {
+	margin-bottom: 30px;
+	font-weight: 400;
+}
+#features i {
+	    background: #f9f9f9;
+        width: 124px;
+    border-radius: 50%;
+    height: 124px;
+    line-height: 124px;
+    border-radius: 50%;
+}
+#features h5 {
+	color: #1b99b9;
+	font-weight: 400;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+#screenshots {
+	padding-top: 50px;
+}
+#screenshots h2 {
+	font-weight: 400;
+}
+#screenshots .row {
+	margin-bottom: 80px;
+}
+#screenshots img {
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
+            box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
+}
+#page-footer {
+    padding: 15px 0 10px;
+    font-size: 12px;
+}
+#roomselectcontainer{
+	height: 500px;
+}
+/*#recordButton1{
+	position: absolute;
+	z-index: 99;
+	font-size: 20px;
+	margin-top: 100px;
+	margin-left: 100px;
+}
+#voiceroomvideo{
+	position: absolute;
+	z-index: 0;
+}*/
+.style1 {
+	height: 80%;
+}
+.style2 {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+.style3 {
+	background-image: url("../assets/Gifs/JokerRant.gif");
+	height: 400px;
+	background-repeat: repeat-x;
+	background-size: cover;
+	background-attachment: scroll;
+}
+.style4 {
+	height: 400px;
+	background-size: cover;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;
+	background-image: url("../assets/Gifs/RisingAbove.gif");
+}
+.style5 {
+	height: 400px;
+	background-image: url("../assets/Gifs/WhispersOfGreenSpaces.gif");
+	background-size: cover;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;
+}
+div.card-header.text-light.bg-info.text-center.font-weight-bolder {
+}
+.style6 {
+	width: 80px;
+	height: 40px;
+}
+.style7 {
+	line-height: 2px;
+	font-size: 1rem;
+	background-color: #593196;
+	color: #fff;
+	border-top-left-radius: 1px;
+	border-top-right-radius: 1px;
+	border-bottom-left-radius: 1px;
+	border-bottom-right-radius: 1px;
+}
+.style8 {
+	color: #fff;
+	font-weight: bold;
+}
+.style9 {
+	font-weight: bold;
+}
+.style10 {
+	color: #000;
+	font-weight: bold;
+	background-color: rgba(161, 106, 229, 0.26);
+	text-align: left;
+}
+#choosebutton {
+	visibility: hidden;
+}
+.style11 {
+	font-size: 1.5rem;
+}
+.style12 {
+	font-size: 1.5rem;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+.style13 {
+	font-size: 1.5rem;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+.style3:hover {
+	height: 400px;
+	background-image: url("../assets/Gifs/JokerRant.gif");
+	background-size: cover;
+	background-repeat: repeat-x;
+}
+div.card-body.style3 {
+	cursor: pointer;
+	opacity: 0.7;
+}
+div.card-body.style3:hover {
+	opacity: 1;
+}
+div.card-body.style4 {
+	cursor: pointer;
+	opacity: 0.7 ;
+}
+div.card-body.style4:hover {
+	opacity: 1 ;
+}
+div.card-body.style5 {
+	cursor: pointer;
+	opacity: 0.7 ;
+}
+div.card-body.style5:hover {
+	opacity: 1 ;
+}
+
+

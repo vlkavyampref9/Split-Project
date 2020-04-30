@@ -1,0 +1,26 @@
+{
+  "projectName": "Split",
+  "styleFile": "/css/style.css",
+  "assetsFolder": "/assets",
+  "frameworks": [
+    {
+      "name": "jquery_slim_33",
+      "type": "cdn"
+    },
+    {
+      "name": "fontawesome_4",
+      "type": "cdn"
+    },
+    {
+      "name": "bootstrap4",
+      "type": "cdn"
+    },
+    {
+      "name": "appConnect",
+      "type": "local"
+    }
+  ],
+  "firebaseProjectID": "",
+  "gitURL": "",
+  "projectType": "web"
+}
