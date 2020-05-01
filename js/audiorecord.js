@@ -20,6 +20,8 @@ stopButton.addEventListener("click", stopRecording);
 pauseButton.addEventListener("click", pauseRecording);
 
 function startRecording() {
+	pauseButton.hidden = false;
+	stopButton.hidden = false;
 	console.log("recordButton clicked");
 
 	/*
@@ -54,7 +56,7 @@ function startRecording() {
 		audioContext = new AudioContext();
 
 		//update the format 
-		document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz";
+		//document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz";
 
 		/*  assign to gumStream for later use  */
 		gumStream = stream;
@@ -86,25 +88,29 @@ function pauseRecording(){
 	if (rec.recording){
 		//pause
 		rec.stop();
-		pauseButton.innerHTML="Resume";
+		pauseButton.childNodes[1].data="Resume";
+		pauseButton.className = "resumebtnvoiceroom";
 	}else{
 		//resume
 		rec.record();
-		pauseButton.innerHTML="Pause";
+		pauseButton.childNodes[1].data="Pause";
+		pauseButton.className = "btnvoiceroom";
 
 	}
 }
 
 function stopRecording() {
+
 	console.log("stopButton clicked");
+	pauseButton.childNodes[1].data="Pause";
+	document.getElementById("studioHideButton").childNodes[1].data = "Hide Studio"
+	pauseButton.hidden = true;
+	stopButton.hidden = true;
+	document.getElementById("studioView").hidden = false;
+    document.getElementById("studioHideButton").hidden = false;
 
 	//disable the stop button, enable the record too allow for new recordings
-	stopButton.disabled = true;
-	recordButton.disabled = false;
-	pauseButton.disabled = true;
-
-	//reset button just in case the recording is stopped while paused
-	pauseButton.innerHTML="Pause";
+	recordButton.disabled = false;	
 	
 	//tell the recorder to stop the recording
 	rec.stop();
@@ -145,23 +151,23 @@ function createDownloadLink(blob) {
 	li.appendChild(link);
 	
 	//upload link
-	var upload = document.createElement('a');
-	upload.href="#";
-	upload.innerHTML = "Upload";
-	upload.addEventListener("click", function(event){
-		  var xhr=new XMLHttpRequest();
-		  xhr.onload=function(e) {
-		      if(this.readyState === 4) {
-		          console.log("Server returned: ",e.target.responseText);
-		      }
-		  };
-		  var fd=new FormData();
-		  fd.append("audio_data",blob, filename);
-		  xhr.open("POST","upload.php",true);
-		  xhr.send(fd);
-	})
-	li.appendChild(document.createTextNode (" "))//add a space in between
-	li.appendChild(upload)//add the upload link to li
+	//var upload = document.createElement('a');
+	//upload.href="#";
+	//upload.innerHTML = "Upload";
+	//upload.addEventListener("click", function(event){
+		 // var xhr=new XMLHttpRequest();
+		 // xhr.onload=function(e) {
+		   //   if(this.readyState === 4) {
+		   //       console.log("Server returned: ",e.target.responseText);
+		   //   }
+		//  };
+		//  var fd=new FormData();
+		//  fd.append("audio_data",blob, filename);
+		//  xhr.open("POST","upload.php",true);
+		//  xhr.send(fd);
+	//})
+	//li.appendChild(document.createTextNode (" "))//add a space in between
+	//li.appendChild(upload)//add the upload link to li
 
 	//add the li element to the ol
   recordingsList.appendChild(li);

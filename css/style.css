@@ -173,5 +173,97 @@ div.card-body.style5 {
 div.card-body.style5:hover {
 	opacity: 1 ;
 }
+#voiceroomvideo{
+	position: absolute;
+	top: 0vh;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	object-fit: fill;
+}
+#controls{
+	position: absolute;
+	bottom: 5vh;
+	z-index: 20;
+	background-color: rgba(67, 59, 82, 0.3);	
+}
+.btnvoiceroom {
+	width: 5vw;
+	height: 5vw;
+	background-color: rgb(102, 87, 240);
+	border: none;
+	color: white;
+	padding: 0.5vw, 0.5vh;
+	font-size: 0.7vw;
+	cursor: pointer;
+	margin: 1vw;
+	display: grid;	
+}
+  
+  /* background on mouse-over */
+.btnvoiceroom:hover {
+	background-color: rgb(173, 113, 230);
+}
+.btnvoiceroom:disabled{
+	  background-color: grey;
+	  color: palevioletred;
+}
 
+.resumebtnvoiceroom{
+	width: 5vw;
+	height: 5vw;
+	background-color: rgb(173, 113, 230);
+	border: none;
+	color: white;
+	padding: 0.5vw, 0.5vh;
+	font-size: 0.7vw;
+	cursor: pointer;
+	margin: 1vw;
+	display: grid;	
+}
+.iconvoiceroom{
+	color: white; 
+	font-size: 2vw;	
+	margin: 0.5vw;
+}
+.eyevoiceroom{
+	color: white; 
+	font-size: 2vw;	
+	margin: 1vw;
+	
+}
+.btnvoiceroom:disabled .iconvoiceroom{
+	color: palevioletred; 
+	font-size: 2vw;	
+	margin: 0.5vw;
+}
 
+.mutebtnvoiceroom{
+	width: 5vw;
+	height: 5vw;
+	background-color: rgb(173, 113, 230);
+	border: none;
+	color: white;
+	padding: 0.5vw, 0.5vh;
+	font-size: 0.7vw;
+	cursor: pointer;
+	margin: 1vw;
+	display: grid;	
+}
+#studioView{
+	position: absolute;
+	top: 5vh;
+	left: 1vw;
+	z-index: 20;
+	background-color: rgba(67, 59, 82, 0.3);
+	width: auto;
+	height: auto;
+	object-fit: contain;	
+}
+#studioTitle{
+	color: white;
+	font-size: 1.5vw;	
+	text-align: left;
+}
+
+ 
