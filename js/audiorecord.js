@@ -36,8 +36,7 @@ function startRecording() {
 	*/
 
 	recordButton.disabled = true;
-	stopButton.disabled = false;
-	pauseButton.disabled = false;
+	document.getElementById("recordingsoundwave").hidden = false;
 
 	/*
     	We're using the standard promise based getUserMedia() 
@@ -90,11 +89,14 @@ function pauseRecording(){
 		rec.stop();
 		pauseButton.childNodes[1].data="Resume";
 		pauseButton.className = "resumebtnvoiceroom";
+		document.getElementById("recordingsoundwave").hidden = true;
+
 	}else{
 		//resume
 		rec.record();
 		pauseButton.childNodes[1].data="Pause";
 		pauseButton.className = "btnvoiceroom";
+		document.getElementById("recordingsoundwave").hidden = false;
 
 	}
 }
@@ -107,7 +109,9 @@ function stopRecording() {
 	pauseButton.hidden = true;
 	stopButton.hidden = true;
 	document.getElementById("studioView").hidden = false;
-    document.getElementById("studioHideButton").hidden = false;
+	document.getElementById("studioHideButton").hidden = false;
+	document.getElementById("recordingsoundwave").hidden = true;
+
 
 	//disable the stop button, enable the record too allow for new recordings
 	recordButton.disabled = false;	
@@ -126,26 +130,35 @@ function createDownloadLink(blob) {
 	
 	var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
+	
 	var li = document.createElement('li');
-  var link = document.createElement('a');
+    var link = document.createElement('a');
 
 	//name of .wav file to use during upload and download (without extension)
-	var filename = new Date().toISOString();
+	var filename = prompt("Please name your recording", "Recording1");
+	//new Date().toISOString();
 
 	//add controls to the <audio> element
 	au.controls = true;
 	au.src = url;
+	au.title = filename;
+	au.className = "audioRecordedTrack";
 
 	//save to disk link
 	link.href = url;
 	link.download = filename+".mp3"; //download forces the browser to donwload the file using the  filename
-	link.innerHTML = "Save to disk";
+	link.innerHTML = "Download";
+	link.className = "audioDownloadButton";
 
 	//add the new audio element to li
+	li.className = "audioRecordedSection";
 	li.appendChild(au);
+
+	//var textnode = document.createTextNode(filename+".mp3 ")
+	//textnode.className = "audioDownloadButton";
 	
 	//add the filename to the li
-	li.appendChild(document.createTextNode(filename+".mp3 "));
+	//li.appendChild(textnode);
 
 	//add the save to disk link to li
 	li.appendChild(link);

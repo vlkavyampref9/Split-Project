@@ -97,8 +97,7 @@ h3.section-title {
 	background-attachment: scroll;
 	border-style: none;
 }
-div.card-header.text-light.bg-info.text-center.font-weight-bolder {
-}
+
 .style6 {
 	width: 80px;
 	height: 40px;
@@ -183,10 +182,13 @@ div.card-body.style5:hover {
 }
 #controls{
 	position: absolute;
-	bottom: 5vh;
-	z-index: 20;
-	background-color: rgba(67, 59, 82, 0.3);	
+	bottom: 9vh;
+	z-index: 19;
+	background-color: rgba(67, 59, 82, 0.3);
+	min-height: 15vh;
+	vertical-align: middle;
 }
+
 .btnvoiceroom {
 	width: 5vw;
 	height: 5vw;
@@ -198,6 +200,7 @@ div.card-body.style5:hover {
 	cursor: pointer;
 	margin: 1vw;
 	display: grid;	
+	z-index: 20;	
 }
   
   /* background on mouse-over */
@@ -258,12 +261,68 @@ div.card-body.style5:hover {
 	background-color: rgba(67, 59, 82, 0.3);
 	width: auto;
 	height: auto;
-	object-fit: contain;	
+	object-fit: contain;
+	max-height: 70vh;	
+	overflow-y: scroll;
 }
+
+#studioView::-webkit-scrollbar {
+	width: 10px;
+	margin-right: 2px;
+  }
+  
+  /* Track */
+  #studioView::-webkit-scrollbar-track {
+	background:none; 
+	opacity: 0;
+  }
+   
+  /* Handle */
+  #studioView::-webkit-scrollbar-thumb {
+	background: none; 
+	border-radius: 10px;
+	border: solid 2px transparent;
+  }
+  
+  /* Handle on hover */
+  #studioView::-webkit-scrollbar-thumb:hover {
+	background: rgb(67, 59, 82); 
+	border-radius: 10px;
+	border: solid 2px transparent;	
+  }
+
 #studioTitle{
 	color: white;
 	font-size: 1.5vw;	
 	text-align: left;
 }
+#recordingsoundwave{
+	width: 100vw;
+    height: 15vh;
+    position: absolute;
+    left: 0vw;
+    bottom: 9vh;
+    z-index: 10;
+	background-image: url("../assets/Gifs/recordingwave.gif");
+	background-size: contain;
+	background-repeat: repeat-x;
+	opacity: 0.3;
+} 
 
+.audioRecordedSection{
+	display: table-row;
+	vertical-align: middle;
+}
+
+.audioRecordedTrack{
+	width: 30vw;
+	display: table-cell;
+}
+
+.audioDownloadButton{
+	font-size: 1vw;
+	color: white;
+	padding: 2px;
+	display: table-cell;
+}
  

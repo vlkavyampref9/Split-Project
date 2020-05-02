@@ -25,6 +25,7 @@
 <body>
 	
 		<video id="voiceroomvideo" autoplay muted src="" preload="auto" loop></video>
+		<div id="recordingsoundwave"></div>
 			
 		<div id="controls" class="container mw-100">			
 			<div class="row justify-content-center">
@@ -33,12 +34,11 @@
 				<button id="stopButton" class="btnvoiceroom" data-toggle="button"><i class="fa fa-stop iconvoiceroom"></i>Stop</button>
 				<button id="unmuteButton" class="mutebtnvoiceroom" data-toggle="button" onclick="toggleMusic()"><i class="fa fa-music iconvoiceroom"></i>Play Music</button>
 				<button id="studioHideButton" class="mutebtnvoiceroom" data-toggle="button" onclick="toggleStudioView()"><i class="fa fa-eye-slash iconvoiceroom"></i>Hide Studio</button>
-				
 			</div>			
 		</div>
 		<div id="studioView" class="container mw-100">
 			<div class="row justify-content-center">
-				<label id="studioTitle">Your "Voices"</label>				
+				<label id="studioTitle">Your Voices</label>				
 			</div>
 			<ol id="recordingsList"></ol>
 		</div>

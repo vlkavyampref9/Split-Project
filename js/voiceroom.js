@@ -7,6 +7,8 @@ function InitRoomAmbience(themevideourl){
    document.getElementById("stopButton").hidden = true;
    document.getElementById("studioView").hidden = true;
    document.getElementById("studioHideButton").hidden = true;
+   document.getElementById("recordingsoundwave").hidden = true;
+
 }
 
 function toggleMusic(){
