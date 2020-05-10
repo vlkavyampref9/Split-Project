@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<!-- Required meta tags -->
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- Custom CSS styles-->
+	<link rel="stylesheet" href="../css/style.css">
+
+	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+	<link rel="stylesheet" href="../bootstrap/4/pulse/bootstrap.min.css" />
+	<script src="../dmxAppConnect/dmxBackgroundVideo/dmxBackgroundVideo.js" defer=""></script>
+	<script src="../dmxAppConnect/dmxBootstrap4Tooltips/dmxBootstrap4Tooltips.js" defer=""></script>
+	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/medium-editor.css" />
+	<script src="../dmxAppConnect/dmxMediumEditor/medium-editor.js" defer=""></script>
+	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.css" />
+	<script src="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js" defer=""></script>
+	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/themes/default.css" />
+	<script src="../dmxAppConnect/dmxVideo/dmxVideo.js" defer=""></script>
+</head>
+
+<body id="characterselectionindex" is="dmx-app" class="style2">
+	<div id="VoiceRoom" class="container-fluid style1">
+		<div class="row">
+			<div class="col align-self-start">
+				<h1 class="display-3 font-weight-bold text-lg-center mh-100 mb-lg-5 text-center mw-100 text-light bg-primary">Who did it sound like ?</h1>
+			</div>
+		</div>
+		<div class="row mb-5 pb-0" id="characterselectcontainer" is="dmx-masonry">
+			<div class="col">
+				<div class="card style14">
+					<div class="card-header text-center font-weight-bolder border-dark rounded-lg style11 text-light text-capitalize bg-primary">Drama Queen</div>
+					<div class="card-body style60 style40" onclick="switchViewToFaceVoice('DramaQueen')">
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">Fussy Baby</div>
+					<div class="card-body style60 style41" onclick="switchViewToFaceVoice('FussyBaby')">
+					</div>
+				</div>
+			</div>
+			<div class="style15 col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">Cool Girl</div>
+					<div class="card-body style60 style42" onclick="switchViewToFaceVoice('CoolGirl')">
+					</div>
+				</div>
+			</div>
+			<div class="style15 col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">Nosy Aunt</div>
+					<div class="card-body style60 style43" onclick="switchViewToFaceVoice('NosyAunt')">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-5 pb-0" id="characterselectcontainer1" is="dmx-masonry">
+			<div class="col">
+				<div class="card style14">
+					<div class="card-header text-center font-weight-bolder border-dark rounded-lg text-light style11 text-capitalize bg-primary">Nagging Gran</div>
+					<div class="card-body style60 style44" onclick="switchViewToFaceVoice('NaggingGran')">
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">Jumpy Dad</div>
+					<div class="card-body style60 style45" onclick="switchViewToFaceVoice('JumpyDad')">
+					</div>
+				</div>
+			</div>
+			<div class="style15 col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">The Saint</div>
+					<div class="card-body style60 style46" onclick="switchViewToFaceVoice('TheSaint')">
+					</div>
+				</div>
+			</div>
+			<div class="style15 col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">Control Devil</div>
+					<div class="card-body style60 style47" onclick="switchViewToFaceVoice('ControlDevil')">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-5 pb-0" id="characterselectcontainer2" is="dmx-masonry">
+			<div class="col">
+				<div class="card style14">
+					<div class="card-header text-center font-weight-bolder border-dark rounded-lg text-light style11 text-capitalize bg-primary">Little Boy</div>
+					<div class="card-body style60 style48" onclick="switchViewToFaceVoice('LittleBoy')">
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">Shake Up</div>
+					<div class="card-body style60 style49" onclick="switchViewToFaceVoice('ShakeUp')">
+					</div>
+				</div>
+			</div>
+			<div class="style15 col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">Angry Mom</div>
+					<div class="card-body style60 style50" onclick="switchViewToFaceVoice('AngryMom')">
+					</div>
+				</div>
+			</div>
+			<div class="style15 col">
+				<div class="card">
+					<div class="card-header text-light text-center font-weight-bolder text-capitalize style11 bg-primary">Vile Uncle</div>
+					<div class="card-body style60 style51" onclick="switchViewToFaceVoice('VileUncle')">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer id="page-footer" class="bg-dark">
+		<div class="container"> <span class="text-muted">Copyright www.split.com</span> </div>
+	</footer>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="../bootstrap/4/js/popper.min.js"></script>
+	<script src="../bootstrap/4/js/bootstrap.min.js"></script>
+	<script src="../js/characterselection.js"></script>
+
+</body>
+
+</html>

@@ -26,6 +26,9 @@ function toggleStudioView(){
    thisView.hidden = thisView.hidden? false: true;
 }
 
+function switchViewToCharacterSelection(){
+   window.location.href = 'characterselection.html';  
+}
 window.addEventListener('DOMContentLoaded', (event) => {
     InitRoomAmbience(localStorage.getItem("SelectedThemeVideo"));
     });

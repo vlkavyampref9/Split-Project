@@ -75,11 +75,11 @@ h3.section-title {
 	overflow: auto;
 }
 .style3 {
-	background-image: url("../assets/Gifs/JokerRant.gif");
 	height: 400px;
 	background-repeat: repeat-x;
 	background-size: cover;
 	background-attachment: scroll;
+	background-image: url("../assets/Gifs/JokerRant.gif");
 }
 .style4 {
 	height: 400px;
@@ -91,45 +91,99 @@ h3.section-title {
 }
 .style5 {
 	height: 400px;
-	background-image: url("../assets/Gifs/WhispersOfGreenSpaces.gif");
-	background-size: cover;
 	background-repeat: repeat-y;
 	background-attachment: scroll;
 	border-style: none;
+	background-size: cover;
+	background-image: url("../assets/Gifs/WhispersOfGreenSpaces.gif");
 }
 
-.style6 {
-	width: 80px;
-	height: 40px;
+.style60 {
+	height: 400px;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;	
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
-.style7 {
-	line-height: 2px;
-	font-size: 1rem;
-	background-color: #593196;
-	color: #fff;
-	border-top-left-radius: 1px;
-	border-top-right-radius: 1px;
-	border-bottom-left-radius: 1px;
-	border-bottom-right-radius: 1px;
+
+.style60:hover {
+	height: 400px;
+	background-size: cover;
+	background-repeat: repeat-x;
 }
-.style8 {
-	color: #fff;
-	font-weight: bold;
+div.card-body.style60 {
+	cursor: pointer;
+	opacity: 0.7;
 }
-.style9 {
-	font-weight: bold;
+div.card-body.style60:hover {
+	opacity: 1;
 }
-.style10 {
-	color: #000;
-	font-weight: bold;
-	background-color: rgba(161, 106, 229, 0.26);
-	text-align: left;
+
+.style40 {
+	background-image: url("../assets/Gifs/characters/DramaQueen.gif");
+}
+.style41 {
+	
+	background-image: url("../assets/Gifs/characters/AngryBaby.gif");
+}
+.style42 {
+	
+	background-image: url("../assets/Gifs/characters/CoolGirl.gif");
+}
+.style43 {
+	
+	background-image: url("../assets/Gifs/characters/HawwAunty.gif");
+}
+.style44 {
+	
+	background-image: url("../assets/Gifs/characters/OldLady.gif");
+}
+
+.style45 {
+	
+	background-image: url("../assets/Gifs/characters/JumpyDad.gif");
+}
+
+.style46 {
+	
+	background-image: url("../assets/Gifs/characters/sage.gif");
+}
+
+.style47 {
+	
+	background-image: url("../assets/Gifs/characters/controlling.gif");
+}
+
+.style48 {
+	
+	background-image: url("../assets/Gifs/characters/AngryBoy.gif");
+}
+
+.style49 {
+
+	background-image: url("../assets/Gifs/characters/Shakeup.gif");
+}
+
+.style50 {
+	
+	background-image: url("../assets/Gifs/characters/angrymom.gif");
+}
+
+.style51 {
+	
+	background-image: url("../assets/Gifs/characters/scheming.gif");
 }
 #choosebutton {
 	visibility: hidden;
 }
 .style11 {
 	font-size: 1.5rem;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
 }
 .style12 {
 	font-size: 1.5rem;
@@ -178,7 +232,8 @@ div.card-body.style5:hover {
 	width: 100vw;
 	height: 100vh;
 	z-index: 1;
-	object-fit: fill;
+	-o-object-fit: fill;
+	   object-fit: fill;
 }
 #controls{
 	position: absolute;
@@ -261,7 +316,10 @@ div.card-body.style5:hover {
 	background-color: rgba(67, 59, 82, 0.3);
 	width: auto;
 	height: auto;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
+	min-height: 20vh;
+	min-width: 45vw;
 	max-height: 70vh;	
 	overflow-y: scroll;
 }
@@ -281,14 +339,14 @@ div.card-body.style5:hover {
   #studioView::-webkit-scrollbar-thumb {
 	background: none; 
 	border-radius: 10px;
-	border: solid 2px transparent;
+	border: 2px solid transparent;
   }
   
   /* Handle on hover */
   #studioView::-webkit-scrollbar-thumb:hover {
 	background: rgb(67, 59, 82); 
 	border-radius: 10px;
-	border: solid 2px transparent;	
+	border: 2px solid transparent;	
   }
 
 #studioTitle{
@@ -325,4 +383,30 @@ div.card-body.style5:hover {
 	padding: 2px;
 	display: table-cell;
 }
+
+#CharacterAssignPageLoadTriggerButton{
+	position: relative;
+    left: 10vw;
+    top: 1.5vh;
+}
+
+#MyVoiceCharacter{
+	min-width: 50vw;
+	min-height: 50vh;
+	width: 50vw;
+	height: 50vh;
+	position: relative;
+	background-color:white;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	left: 25vw;
+}
+
+.style6 {
+	height: 5vh;
+	font-size: 1.5rem;
+}
+
+
  

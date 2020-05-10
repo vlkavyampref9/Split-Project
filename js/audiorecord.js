@@ -4,6 +4,7 @@ URL = window.URL || window.webkitURL;
 var gumStream; 						//stream from getUserMedia()
 var rec; 							//Recorder.js object
 var input; 							//MediaStreamAudioSourceNode we'll be recording
+var listOfRecordings = [];
 
 
 // shim for AudioContext when it's not avb. 
@@ -143,10 +144,13 @@ function createDownloadLink(blob) {
 	au.src = url;
 	au.title = filename;
 	au.className = "audioRecordedTrack";
-
+	
+	var numberofrecordings = listOfRecordings.push(url);
+	var localStorageName = "record" + numberofrecordings.toString();
+	localStorage.setItem(localStorageName, url);
 	//save to disk link
 	link.href = url;
-	link.download = filename+".mp3"; //download forces the browser to donwload the file using the  filename
+	link.download = filename+".mp3"; //download forces the browser to download the file using the  filename
 	link.innerHTML = "Download";
 	link.className = "audioDownloadButton";
 
@@ -183,6 +187,6 @@ function createDownloadLink(blob) {
 	//li.appendChild(upload)//add the upload link to li
 
 	//add the li element to the ol
-  recordingsList.appendChild(li);
+  document.getElementById("recordingsList").appendChild(li);
   console.log(recordingsList);
 }
