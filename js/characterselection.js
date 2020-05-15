@@ -17,7 +17,7 @@ var CharacterList = [{character: "DramaQueen", gifurl: "../assets/Gifs/character
 
 
 function switchViewToFaceVoice(character){
-    //save all recordings to local storage.
+    //do something
     localStorage.setItem("SelectedCharacter", character);
     let gifURL =  CharacterList.find(obj => obj.character === character).gifurl;
     localStorage.setItem("SelectedCharacterGif", gifURL);

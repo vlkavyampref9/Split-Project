@@ -41,7 +41,5 @@ function PlayTransform(){
 window.addEventListener('DOMContentLoaded', (event) => {
    au = document.getElementById("VoiceCharacterAudio");
    InitRoomAmbience2(localStorage.getItem("SelectedCharacterGif"));
-   });
+   }); 
 
-
-   

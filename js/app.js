@@ -1,6 +1,5 @@
 
 function SwitchViewToVoiceRoom() { 
     localStorage.clear();
-    window.location.href = 'views/roomselection.html';
-   
+    window.location.href = 'views/roomselection.html';   
    }

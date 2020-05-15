@@ -148,7 +148,7 @@ function createDownloadLink(blob) {
 	
 	var numberofrecordings = listOfRecordings.push(url);
 	var localStorageName = "record" + numberofrecordings.toString();
-	//localStorage.setItem(localStorageName, url);
+	localStorage.setItem(localStorageName, url);
 	//save to disk link
 	link.href = url;
 	link.download = filename+".mp3"; //download forces the browser to download the file using the  filename
@@ -158,11 +158,10 @@ function createDownloadLink(blob) {
 	//add the new audio element to li
 	li.className = "audioRecordedSection";
 	li.appendChild(au);
-
-	//add the save to disk link to li
 	li.appendChild(link);
+	
 	storeBlobToLocalStorage(blob, url, localStorageName);
-	transformVoice(blob, 1.9, localStorageName+"transform");
+	//transformVoice(blob, 1.9, localStorageName+"transform");
 	
 	//upload link
 	//var upload = document.createElement('a');
@@ -227,16 +226,10 @@ async function transformVoice(blob, transformArgs, localStorageName) {
 	  let ctx = new AudioContext();
 	  globalAudioBuffer = await ctx.decodeAudioData(arrayBuffer);
 	}
-  
-	//try {
+  	
 	  let outputAudioBuffer = await pitchTransform(globalAudioBuffer, transformArgs);
-	  let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer);
-	  //let outputWavBlob = exportWAV(outputAudioBuffer);
+	  let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer);	
 	  storeBlobToLocalStorage(outputWavBlob, window.URL.createObjectURL(outputWavBlob), localStorageName);
-	  
-	//} catch(e) {
-	//  alert("Sorry! There was an error while trying to generate this particular voice.");
-	//  closeOutputSection();
-	//} 
+	
 	 
   }   
