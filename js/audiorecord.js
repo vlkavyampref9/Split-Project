@@ -147,7 +147,7 @@ function createDownloadLink(blob) {
 	
 	var numberofrecordings = listOfRecordings.push(url);
 	var localStorageName = "record" + numberofrecordings.toString();
-	localStorage.setItem(localStorageName, url);
+	//localStorage.setItem(localStorageName, url);
 	//save to disk link
 	link.href = url;
 	link.download = filename+".mp3"; //download forces the browser to download the file using the  filename
@@ -158,14 +158,9 @@ function createDownloadLink(blob) {
 	li.className = "audioRecordedSection";
 	li.appendChild(au);
 
-	//var textnode = document.createTextNode(filename+".mp3 ")
-	//textnode.className = "audioDownloadButton";
-	
-	//add the filename to the li
-	//li.appendChild(textnode);
-
 	//add the save to disk link to li
 	li.appendChild(link);
+	storeBlobToLocalStorage(blob, url, localStorageName);
 	
 	//upload link
 	//var upload = document.createElement('a');
@@ -189,4 +184,37 @@ function createDownloadLink(blob) {
 	//add the li element to the ol
   document.getElementById("recordingsList").appendChild(li);
   console.log(recordingsList);
+}
+
+
+// Function to convert recordings into base64 strings and store to local storage.
+function storeBlobToLocalStorage(blob, audiosourceURL, filename){
+	var size = blob.size;
+	var type = blob.type;
+
+	var reader = new FileReader();
+	reader.addEventListener("loadend", function() {
+	  // 1: play the base64 encoded data directly works
+	  // audioControl.src = reader.result;
+
+	  // 2: Serialize the data to localStorage and read it back then play...
+	  var base64FileData = reader.result.toString();
+
+	  var mediaFile = {
+		fileUrl: audiosourceURL,
+		size: blob.size,
+		type: blob.type,
+		src: base64FileData
+	  };
+
+	  // save the file info to localStorage
+	  localStorage.setItem(filename, JSON.stringify(mediaFile));
+	  console.log(filename + ": stored to browser");
+	  // read out the file info from localStorage again
+	  //var reReadItem = JSON.parse(localStorage.getItem('myTest'));	
+	  //audioControl.src = reReadItem.src; 
+
+	});
+
+	reader.readAsDataURL(blob);
 }
