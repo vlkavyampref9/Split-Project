@@ -1,6 +1,7 @@
 //webkitURL is deprecated but nevertheless
 URL = window.URL || window.webkitURL;
 
+var globalAudioBuffer = null;
 var gumStream; 						//stream from getUserMedia()
 var rec; 							//Recorder.js object
 var input; 							//MediaStreamAudioSourceNode we'll be recording
@@ -161,6 +162,7 @@ function createDownloadLink(blob) {
 	//add the save to disk link to li
 	li.appendChild(link);
 	storeBlobToLocalStorage(blob, url, localStorageName);
+	transformVoice(blob, 1.9, localStorageName+"transform");
 	
 	//upload link
 	//var upload = document.createElement('a');
@@ -191,15 +193,14 @@ function createDownloadLink(blob) {
 function storeBlobToLocalStorage(blob, audiosourceURL, filename){
 	var size = blob.size;
 	var type = blob.type;
-
+	
 	var reader = new FileReader();
 	reader.addEventListener("loadend", function() {
 	  // 1: play the base64 encoded data directly works
 	  // audioControl.src = reader.result;
 
 	  // 2: Serialize the data to localStorage and read it back then play...
-	  var base64FileData = reader.result.toString();
-
+	  var base64FileData = reader.result.toString();	 
 	  var mediaFile = {
 		fileUrl: audiosourceURL,
 		size: blob.size,
@@ -218,3 +219,24 @@ function storeBlobToLocalStorage(blob, audiosourceURL, filename){
 
 	reader.readAsDataURL(blob);
 }
+
+async function transformVoice(blob, transformArgs, localStorageName) {
+	
+	 if(!globalAudioBuffer) {
+	  let arrayBuffer = await blob.arrayBuffer();
+	  let ctx = new AudioContext();
+	  globalAudioBuffer = await ctx.decodeAudioData(arrayBuffer);
+	}
+  
+	//try {
+	  let outputAudioBuffer = await pitchTransform(globalAudioBuffer, transformArgs);
+	  let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer);
+	  //let outputWavBlob = exportWAV(outputAudioBuffer);
+	  storeBlobToLocalStorage(outputWavBlob, window.URL.createObjectURL(outputWavBlob), localStorageName);
+	  
+	//} catch(e) {
+	//  alert("Sorry! There was an error while trying to generate this particular voice.");
+	//  closeOutputSection();
+	//} 
+	 
+  }   

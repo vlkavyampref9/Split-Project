@@ -2,6 +2,7 @@
 //var audioFileUrl = localStorage.getItem("record1");
 var au;
 var currentrecording = 1;
+
  
 function InitRoomAmbience2(selectedCharacter){
   document.getElementById("MyVoiceCharacter").style.backgroundImage = "url('"+selectedCharacter+"')";    
@@ -29,8 +30,18 @@ function PlayNextOrLoop(){
   au.play();
 
 }
-    
+
+function PlayTransform(){
+  au.pause();
+  var localname = "record"+ currentrecording.toString()+"transform";
+  au.src = JSON.parse(localStorage.getItem(localname)).src;
+  au.play();
+}
+  
 window.addEventListener('DOMContentLoaded', (event) => {
    au = document.getElementById("VoiceCharacterAudio");
    InitRoomAmbience2(localStorage.getItem("SelectedCharacterGif"));
    });
+
+
+   
