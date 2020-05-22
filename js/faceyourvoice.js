@@ -12,23 +12,21 @@ function InitRoomAmbience2(selectedCharacter){
   au.className = "audioRecordedTrack";
 }
 
-function playVoicesInLoop(){
-    document.getElementById("VoiceCharacterAudio").src = JSON.parse(localStorage.getItem("record1")).src;
-    au.play();
-    document.getElementById("PlayButton").disabled = true;   
+function playVoicesInLoop(){  
+  GetRecordingFromDataBaseAndPlay("record1");
+  document.getElementById("PlayButton").disabled = true;      
 }
 
 function PlayNextOrLoop(){
-  if(currentrecording < 5){
+  var checknext = currentrecording + 1;
+  if(currentrecording < 5 && localStorage.getItem("record"+ checknext.toString()) ){
     currentrecording++;      
   }
   else{
     currentrecording = 1;
   }
   var localname = "record"+ currentrecording.toString();
-  au.src = JSON.parse(localStorage.getItem(localname)).src;
-  au.play();
-
+  GetRecordingFromDataBaseAndPlay(localname);
 }
 
 function PlayTransform(){

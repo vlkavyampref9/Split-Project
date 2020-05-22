@@ -146,9 +146,11 @@ function createDownloadLink(blob) {
 	au.title = filename;
 	au.className = "audioRecordedTrack";
 	
-	var numberofrecordings = listOfRecordings.push(url);
+    var numberofrecordings = listOfRecordings.push(url);
 	var localStorageName = "record" + numberofrecordings.toString();
-	localStorage.setItem(localStorageName, url);
+	localStorage.removeItem(localStorageName);
+	localStorage.setItem(localStorageName, true);	
+	
 	//save to disk link
 	link.href = url;
 	link.download = filename+".mp3"; //download forces the browser to download the file using the  filename
@@ -159,29 +161,10 @@ function createDownloadLink(blob) {
 	li.className = "audioRecordedSection";
 	li.appendChild(au);
 	li.appendChild(link);
+	StoreToDataBase(localStorageName, blob, numberofrecordings);
 	
-	storeBlobToLocalStorage(blob, url, localStorageName);
+	//storeBlobToLocalStorage(blob, url, localStorageName);
 	//transformVoice(blob, 1.9, localStorageName+"transform");
-	
-	//upload link
-	//var upload = document.createElement('a');
-	//upload.href="#";
-	//upload.innerHTML = "Upload";
-	//upload.addEventListener("click", function(event){
-		 // var xhr=new XMLHttpRequest();
-		 // xhr.onload=function(e) {
-		   //   if(this.readyState === 4) {
-		   //       console.log("Server returned: ",e.target.responseText);
-		   //   }
-		//  };
-		//  var fd=new FormData();
-		//  fd.append("audio_data",blob, filename);
-		//  xhr.open("POST","upload.php",true);
-		//  xhr.send(fd);
-	//})
-	//li.appendChild(document.createTextNode (" "))//add a space in between
-	//li.appendChild(upload)//add the upload link to li
-
 	//add the li element to the ol
   document.getElementById("recordingsList").appendChild(li);
   console.log(recordingsList);
@@ -208,6 +191,7 @@ function storeBlobToLocalStorage(blob, audiosourceURL, filename){
 	  };
 
 	  // save the file info to localStorage
+	  localStorage.removeItem(filename);
 	  localStorage.setItem(filename, JSON.stringify(mediaFile));
 	  console.log(filename + ": stored to browser");
 	  // read out the file info from localStorage again
@@ -218,7 +202,7 @@ function storeBlobToLocalStorage(blob, audiosourceURL, filename){
 
 	reader.readAsDataURL(blob);
 }
-
+// function to transform the voice to a different character based on parameter passed from HTML
 async function transformVoice(blob, transformArgs, localStorageName) {
 	
 	 if(!globalAudioBuffer) {

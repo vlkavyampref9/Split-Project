@@ -8,7 +8,7 @@ function InitRoomAmbience(themevideourl){
    document.getElementById("studioView").hidden = true;
    document.getElementById("studioHideButton").hidden = true;
    document.getElementById("recordingsoundwave").hidden = true;
-
+   
 }
 
 function toggleMusic(){
@@ -16,8 +16,8 @@ function toggleMusic(){
    var thisButton = document.getElementById("unmuteButton");
    thisButton.childNodes[1].data = videoelement.muted ? "Mute" : "Play Music";
    thisButton.className = videoelement.muted ? "btnvoiceroom" : "mutebtnvoiceroom";
-   videoelement.muted = videoelement.muted ? false: true; 
-  
+   videoelement.muted = videoelement.muted ? false: true;  
+   videoelement.volume =  videoelement.muted ? 0: 01;
 }
 
 function toggleStudioView(){
