@@ -14,7 +14,7 @@ function SwitchViewToVoiceRoom() {
 
 
 
-function StoreToDataBase(RecordingName, blob, id) {
+function StoreToDataBase(StoreName, IndexName, RecordingName, blob, id) {
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
     if(!window.indexedDB){
         alert("storage is unavailable");
@@ -31,7 +31,7 @@ function StoreToDataBase(RecordingName, blob, id) {
         //db.deleteObjectStore("RecordingsStore");
         let store = db.createObjectStore("RecordingsStore", {keyPath: "recID"}), //instead use {autoIncrement: true} - keys input.
         index = store.createIndex("recordingName", "recordingName", {unique: true});
-        };
+       };
 
     request.onerror = function(e){
         console.log("There was an error: " + e.target.errorCode);
@@ -40,9 +40,9 @@ function StoreToDataBase(RecordingName, blob, id) {
     //used to get data or assign data to the database
     request.onsuccess = function(e){
         db = request.result;
-        tx = db.transaction("RecordingsStore", "readwrite");
-        store = tx.objectStore("RecordingsStore");
-        index = store.index("recordingName");
+        tx = db.transaction(StoreName, "readwrite");
+        store = tx.objectStore(StoreName);
+        index = store.index(IndexName);
 
         db.onerror = function(e){
             console.log("ERROR" + e.target.errorCode);
@@ -61,7 +61,7 @@ function StoreToDataBase(RecordingName, blob, id) {
 };
 
 
-async function GetRecordingFromDataBaseAndPlay(RecordingName) {    
+async function GetRecordingFromDataBaseAndPlay(StoreName, IndexName, RecordingName, AudioElementID) {    
 
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
     if(!window.indexedDB){
@@ -81,9 +81,9 @@ async function GetRecordingFromDataBaseAndPlay(RecordingName) {
     //used to get data or assign data to the database
     request.onsuccess = function(e){
         db = request.result;
-        tx = db.transaction("RecordingsStore", "readwrite");
-        store = tx.objectStore("RecordingsStore");
-        index = store.index("recordingName");
+        tx = db.transaction(StoreName, "readwrite");
+        store = tx.objectStore(StoreName);
+        index = store.index(IndexName);
 
         db.onerror = function(e){
             console.log("ERROR" + e.target.errorCode);
@@ -92,7 +92,7 @@ async function GetRecordingFromDataBaseAndPlay(RecordingName) {
         let value = index.get(RecordingName);        
         value.onsuccess = function(){ 
             console.log("DB fetch success"); 
-            var au = document.getElementById("VoiceCharacterAudio");
+            var au = document.getElementById(AudioElementID);
             au.src = URL.createObjectURL(value.result.recordingBlob);
             au.play();                      
         };
@@ -104,5 +104,3 @@ async function GetRecordingFromDataBaseAndPlay(RecordingName) {
         //onsuccess handlers for data set or retrieve.        
     };
 };
-
-

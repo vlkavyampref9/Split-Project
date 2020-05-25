@@ -1,16 +1,16 @@
 
-var CharacterList = [{character: "DramaQueen", gifurl: "../assets/Gifs/characters/DramaQueen.gif"},
-{character: "FussyBaby", gifurl: "../assets/Gifs/characters/AngryBaby.gif"},
-{character: "CoolGirl", gifurl: "../assets/Gifs/characters/CoolGirl.gif"},
-{character: "NosyAunt", gifurl: "../assets/Gifs/characters/HawwAunty.gif"},
-{character: "NaggingGran", gifurl: "../assets/Gifs/characters/OldLady.gif"}, 
-{character: "JumpyDad", gifurl: "../assets/Gifs/characters/JumpyDad.gif"}, 
-{character: "TheSaint", gifurl: "../assets/Gifs/characters/sage.gif"}, 
-{character: "ControlDevil", gifurl: "../assets/Gifs/characters/controlling.gif"},
-{character: "LittleBoy", gifurl: "../assets/Gifs/characters/AngryBoy.gif"}, 
-{character: "ShakeUp", gifurl: "../assets/Gifs/characters/Shakeup.gif"}, 
-{character: "AngryMom", gifurl: "../assets/Gifs/characters/angrymom.gif"}, 
-{character: "VileUncle", gifurl: "../assets/Gifs/characters/scheming.gif"}
+var CharacterList = [{character: "Drama Queen", gifurl: "../assets/Gifs/characters/DramaQueen.gif"},
+{character: "Fussy Baby", gifurl: "../assets/Gifs/characters/AngryBaby.gif"},
+{character: "Cool Girl", gifurl: "../assets/Gifs/characters/CoolGirl.gif"},
+{character: "Nosy Aunt", gifurl: "../assets/Gifs/characters/HawwAunty.gif"},
+{character: "Nagging Gran", gifurl: "../assets/Gifs/characters/OldLady.gif"}, 
+{character: "Jumpy Dad", gifurl: "../assets/Gifs/characters/JumpyDad.gif"}, 
+{character: "The Saint", gifurl: "../assets/Gifs/characters/sage.gif"}, 
+{character: "Control Devil", gifurl: "../assets/Gifs/characters/controlling.gif"},
+{character: "Little Boy", gifurl: "../assets/Gifs/characters/AngryBoy.gif"}, 
+{character: "Shake Up", gifurl: "../assets/Gifs/characters/Shakeup.gif"}, 
+{character: "Angry Mom", gifurl: "../assets/Gifs/characters/angrymom.gif"}, 
+{character: "Vile Uncle", gifurl: "../assets/Gifs/characters/scheming.gif"}
 ];
 
 

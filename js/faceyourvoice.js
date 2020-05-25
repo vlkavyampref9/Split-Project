@@ -5,7 +5,8 @@ var currentrecording = 1;
 
  
 function InitRoomAmbience2(selectedCharacter){
-  document.getElementById("MyVoiceCharacter").style.backgroundImage = "url('"+selectedCharacter+"')";    
+  document.getElementById("MyVoiceCharacter").style.backgroundImage = "url('"+selectedCharacter+"')"; 
+  document.getElementById("CharacterTitle").innerHTML = "Meet the " + localStorage.getItem("SelectedCharacter");   
   au.controls = true;
 	au.src = null;
 	au.title = "yourvoices";
@@ -13,7 +14,7 @@ function InitRoomAmbience2(selectedCharacter){
 }
 
 function playVoicesInLoop(){  
-  GetRecordingFromDataBaseAndPlay("record1");
+  GetRecordingFromDataBaseAndPlay("RecordingsStore", "recordingName", "record1", "VoiceCharacterAudio");
   document.getElementById("PlayButton").disabled = true;      
 }
 
@@ -26,7 +27,7 @@ function PlayNextOrLoop(){
     currentrecording = 1;
   }
   var localname = "record"+ currentrecording.toString();
-  GetRecordingFromDataBaseAndPlay(localname);
+  GetRecordingFromDataBaseAndPlay("RecordingsStore", "recordingName", localname, "VoiceCharacterAudio");
 }
 
 function PlayTransform(){
@@ -35,6 +36,20 @@ function PlayTransform(){
   au.src = JSON.parse(localStorage.getItem(localname)).src;
   au.play();
 }
+
+// function to transform the voice to a different character based on parameter passed from HTML
+async function transformVoice(blob, transformArgs, localStorageName) {
+	
+  if(!globalAudioBuffer) {
+   let arrayBuffer = await blob.arrayBuffer();
+   let ctx = new AudioContext();
+   globalAudioBuffer = await ctx.decodeAudioData(arrayBuffer);
+ }
+   
+   let outputAudioBuffer = await pitchTransform(globalAudioBuffer, transformArgs);
+   let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer);	
+   return outputWavBlob; 
+ }  
   
 window.addEventListener('DOMContentLoaded', (event) => {
    au = document.getElementById("VoiceCharacterAudio");

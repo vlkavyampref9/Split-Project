@@ -161,7 +161,7 @@ function createDownloadLink(blob) {
 	li.className = "audioRecordedSection";
 	li.appendChild(au);
 	li.appendChild(link);
-	StoreToDataBase(localStorageName, blob, numberofrecordings);
+	StoreToDataBase("RecordingsStore", "recordingName", localStorageName, blob, numberofrecordings);
 	
 	//storeBlobToLocalStorage(blob, url, localStorageName);
 	//transformVoice(blob, 1.9, localStorageName+"transform");
@@ -202,18 +202,4 @@ function storeBlobToLocalStorage(blob, audiosourceURL, filename){
 
 	reader.readAsDataURL(blob);
 }
-// function to transform the voice to a different character based on parameter passed from HTML
-async function transformVoice(blob, transformArgs, localStorageName) {
-	
-	 if(!globalAudioBuffer) {
-	  let arrayBuffer = await blob.arrayBuffer();
-	  let ctx = new AudioContext();
-	  globalAudioBuffer = await ctx.decodeAudioData(arrayBuffer);
-	}
-  	
-	  let outputAudioBuffer = await pitchTransform(globalAudioBuffer, transformArgs);
-	  let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer);	
-	  storeBlobToLocalStorage(outputWavBlob, window.URL.createObjectURL(outputWavBlob), localStorageName);
-	
-	 
-  }   
+ 
