@@ -48,12 +48,11 @@ h3.section-title {
     -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
             box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
 }
-#page-footer {
-    padding: 15px 0 10px;
-    font-size: 12px;
+#page-footer {width: 100%;padding: 15px 0;
+    font-size: 12px;/* position: absolute */bottom: 0;/* margin-top: 100px */
 }
 #roomselectcontainer{
-	height: 500px;
+	/* height: 500px */
 }
 /*#recordButton1{
 	position: absolute;
@@ -184,6 +183,7 @@ div.card-body.style60:hover {
 	border-top-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
+	height: 60px;
 }
 .style12 {
 	font-size: 1.5rem;
@@ -191,6 +191,8 @@ div.card-body.style60:hover {
 	border-top-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
+	height: 60px;
+	display: block;
 }
 .style13 {
 	font-size: 1.5rem;
@@ -228,12 +230,10 @@ div.card-body.style5:hover {
 }
 #voiceroomvideo{
 	position: absolute;
-	top: 0vh;
-	width: 100vw;
-	height: 100vh;
+	top: 0vh;width: 100vw;height: 100vh;
 	z-index: 1;
-	-o-object-fit: fill;
-	   object-fit: fill;
+	   -o-object-fit: fill;
+	      object-fit: fill;
 }
 #controls{
 	position: absolute;
@@ -244,9 +244,7 @@ div.card-body.style5:hover {
 	vertical-align: middle;
 }
 
-.btnvoiceroom {
-	width: 5vw;
-	height: 5vw;
+.btnvoiceroom {width: 5vw;height: 5vw;
 	background-color: rgb(102, 87, 240);
 	border: none;
 	color: white;
@@ -256,6 +254,7 @@ div.card-body.style5:hover {
 	margin: 1vw;
 	display: grid;	
 	z-index: 20;	
+	overflow: auto;	
 }
   
   /* background on mouse-over */
@@ -301,10 +300,8 @@ div.card-body.style5:hover {
 	height: 5vw;
 	background-color: rgb(173, 113, 230);
 	border: none;
-	color: white;
-	padding: 0.5vw, 0.5vh;
-	font-size: 0.7vw;
-	cursor: pointer;
+	color: white;padding: 0.5vw, 0.5vh;
+	font-size: 0.7vw;/* cursor: pointer */
 	margin: 1vw;
 	display: grid;	
 }
@@ -406,6 +403,71 @@ div.card-body.style5:hover {
 .style6 {
 	height: 5vh;
 	font-size: 1.5rem;
+}
+
+.cardSize {height: 462px}
+
+.style7 {
+	height: 462px;
+	/* margin-top: 30px */
+	/* margin-bottom: 30px */
+}
+
+#roomselectionindex {
+}
+
+.style7.cardSize {
+}
+
+.style8 {position: static;
+	position: -webkit-sticky;
+	position: static;
+	position: static;
+	position: static;
+	position: static;
+	position: static;
+	position: static;
+	position: static;position: static;
+	background-attachment: scroll;
+}
+
+.style9 {
+	float: none;
+	clear: none;
+	background-size: auto;
+	position: relative;
+}
+
+@media (min-width: 576px) {
+
+.btnvoiceroom {
+		overflow: visible;
+	}
+}
+
+.style10 {
+}
+
+.style14 {
+	height: 15vh;
+}
+
+@media (min-width: 768px) {
+
+.style14 {
+		height: 15vh;
+	}
+}
+
+.style15 {
+	display: block;
+	/* padding-top: 15px */
+	/* padding-bottom: 15px */
+	/* width: 100% */
+}
+
+.style16 {
+	max-width: 720px;
 }
 
 
