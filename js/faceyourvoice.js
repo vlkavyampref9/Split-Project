@@ -1,7 +1,9 @@
 
 //var audioFileUrl = localStorage.getItem("record1");
 var au;
-var currentrecording = 1;
+var currentrecording = 0;
+var globalOriginalVoiceBlob = undefined;
+var globalTransformedVoiceBlob = undefined;
 
  
 function InitRoomAmbience2(selectedCharacter){
@@ -13,12 +15,7 @@ function InitRoomAmbience2(selectedCharacter){
   au.className = "audioRecordedTrack";
 }
 
-function playVoicesInLoop(){  
-  GetRecordingFromDataBaseAndPlay("RecordingsStore", "recordingName", "record1", "VoiceCharacterAudio");
-  document.getElementById("PlayButton").disabled = true;      
-}
-
-function PlayNextOrLoop(){
+function playVoicesInLoop(){ 
   var checknext = currentrecording + 1;
   if(currentrecording < 5 && localStorage.getItem("record"+ checknext.toString()) ){
     currentrecording++;      
@@ -27,32 +24,76 @@ function PlayNextOrLoop(){
     currentrecording = 1;
   }
   var localname = "record"+ currentrecording.toString();
-  GetRecordingFromDataBaseAndPlay("RecordingsStore", "recordingName", localname, "VoiceCharacterAudio");
+  transformRecordingFromDataBase("RecordingsStore", "recordingName", localname);  
+  document.getElementById("PlayButton").disabled = true;      
 }
 
-function PlayTransform(){
-  au.pause();
-  var localname = "record"+ currentrecording.toString()+"transform";
-  au.src = JSON.parse(localStorage.getItem(localname)).src;
-  au.play();
+function PlayNextOrLoop(){
+  document.getElementById("PlayButton").disabled = false;   
 }
+
 
 // function to transform the voice to a different character based on parameter passed from HTML
-async function transformVoice(blob, transformArgs, localStorageName) {
-	
-  if(!globalAudioBuffer) {
+async function transformVoice(blob, transformEffects) { 
    let arrayBuffer = await blob.arrayBuffer();
    let ctx = new AudioContext();
-   globalAudioBuffer = await ctx.decodeAudioData(arrayBuffer);
- }
-   
-   let outputAudioBuffer = await pitchTransform(globalAudioBuffer, transformArgs);
-   let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer);	
-   return outputWavBlob; 
- }  
+   var outputAudioBuffer = await ctx.decodeAudioData(arrayBuffer); 
+   var iter;
+   for(iter = 0; iter < transformEffects.length; iter++){
+    outputAudioBuffer = await window[transformEffects[iter].name+"Transformer"](outputAudioBuffer, transformEffects[iter].params);    
+   }   
+   let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer); 
+   globalTransformedVoiceBlob = outputWavBlob; 
+   au.src = URL.createObjectURL(outputWavBlob);   
+   au.play();  
+ } 
+
+ 
+function transformRecordingFromDataBase(StoreName, IndexName, RecordingName) { 
+  window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+  if(!window.indexedDB){
+      alert("storage is unavailable");
+  }
+
+  let request = window.indexedDB.open("RecordingsDataBase", 1),
+  db,
+  tx,
+  store,
+  index;
+  
+  request.onerror = function(e){
+      console.log("There was an error: " + e.target.errorCode);
+      };
+
+  //used to get data or assign data to the database
+  request.onsuccess = function(e){
+      db = request.result;
+      tx = db.transaction(StoreName, "readwrite");
+      store = tx.objectStore(StoreName);
+      index = store.index(IndexName);
+
+      db.onerror = function(e){
+          console.log("ERROR" + e.target.errorCode);               
+      }
+
+      let value = index.get(RecordingName);        
+      value.onsuccess = function(){ 
+          console.log("DB fetch success");   
+          globalOriginalVoiceBlob = value.result.recordingBlob;         
+          transformVoice(value.result.recordingBlob, JSON.parse(localStorage.getItem("SelectedCharacterEffects")));                                      
+      };
+
+      tx.oncomplete = function(){            
+          db.close();
+      };
+      //set or retrieve data here.
+      //onsuccess handlers for data set or retrieve.        
+  };
+
+};
   
 window.addEventListener('DOMContentLoaded', (event) => {
-   au = document.getElementById("VoiceCharacterAudio");
+   au = document.getElementById("VoiceCharacterAudio");  
    InitRoomAmbience2(localStorage.getItem("SelectedCharacterGif"));
    }); 
 
