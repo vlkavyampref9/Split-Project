@@ -22,11 +22,12 @@ h3.section-title {
 	font-weight: 400;
 }
 #features i {
-	background: #f9f9f9;
-    width: 124px;
+	    background: #f9f9f9;
+        width: 124px;
     border-radius: 50%;
     height: 124px;
     line-height: 124px;
+    border-radius: 50%;
 }
 #features h5 {
 	color: #1b99b9;
@@ -47,11 +48,12 @@ h3.section-title {
     -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
             box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
 }
-#page-footer {width: 100%;padding: 15px 0;
-    font-size: 12px;position: relative;bottom: 0;/* margin-top: 100px */
+#page-footer {
+    padding: 15px 0 10px;
+    font-size: 12px;
 }
 #roomselectcontainer{
-	/* height: 500px */
+	height: 500px;
 }
 /*#recordButton1{
 	position: absolute;
@@ -97,12 +99,13 @@ h3.section-title {
 }
 
 .style60 {
-	height: 30vh;
-	background-repeat: no-repeat;
+	height: 400px;
+	background-repeat: repeat-y;
 	background-attachment: scroll;
 	border-style: none;	
 	background-position: center;
 	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .style60:hover {
@@ -181,7 +184,6 @@ div.card-body.style60:hover {
 	border-top-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
-	min-height: 60px;
 }
 .style12 {
 	font-size: 1.5rem;
@@ -189,9 +191,6 @@ div.card-body.style60:hover {
 	border-top-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
-	/* height: 60px */
-	display: block;
-	min-height: 60px;
 }
 .style13 {
 	font-size: 1.5rem;
@@ -228,14 +227,17 @@ div.card-body.style5:hover {
 	opacity: 1 ;
 }
 #voiceroomvideo{
-	position: relative;
-	top: 0vh;width: 100vw;height: 100vh;
+	position: absolute;
+	top: 0vh;
+	width: 100vw;
+	height: 100vh;
 	z-index: 1;
-	   -o-object-fit: fill;
-	      object-fit: fill;
+	-o-object-fit: fill;
+	   object-fit: fill;
 }
 #controls{
-	position: absolute;bottom: 9vh;
+	position: absolute;
+	bottom: 9vh;
 	z-index: 19;
 	background-color: rgba(67, 59, 82, 0.3);
 	min-height: 15vh;
@@ -243,17 +245,17 @@ div.card-body.style5:hover {
 }
 
 .btnvoiceroom {
+	width: 5vw;
+	height: 5vw;
 	background-color: rgb(102, 87, 240);
 	border: none;
 	color: white;
 	padding: 0.5vw, 0.5vh;
-	font-size: 10px;
+	font-size: 0.7vw;
 	cursor: pointer;
 	margin: 1vw;
 	display: grid;	
 	z-index: 20;	
-	overflow: auto;	
-	min-width: 50px;	
 }
   
   /* background on mouse-over */
@@ -263,26 +265,24 @@ div.card-body.style5:hover {
 .btnvoiceroom:disabled{
 	  background-color: grey;
 	  color: palevioletred;
-	  min-height: 20px;
 }
 
 .resumebtnvoiceroom{
+	width: 5vw;
+	height: 5vw;
 	background-color: rgb(173, 113, 230);
 	border: none;
 	color: white;
 	padding: 0.5vw, 0.5vh;
-	font-size: 10px;
+	font-size: 0.7vw;
 	cursor: pointer;
 	margin: 1vw;
-	display: grid;
-	min-height: 20px;
-	min-width: 50px;	
+	display: grid;	
 }
 .iconvoiceroom{
-	color: white;
-	font-size: 20px;	
-	margin: 0.5vw;	
-	min-height: 20px;
+	color: white; 
+	font-size: 2vw;	
+	margin: 0.5vw;
 }
 .eyevoiceroom{
 	color: white; 
@@ -292,18 +292,21 @@ div.card-body.style5:hover {
 }
 .btnvoiceroom:disabled .iconvoiceroom{
 	color: palevioletred; 
-	font-size: 20px;	
+	font-size: 2vw;	
 	margin: 0.5vw;
 }
 
 .mutebtnvoiceroom{
+	width: 5vw;
+	height: 5vw;
 	background-color: rgb(173, 113, 230);
 	border: none;
-	color: white;padding: 0.5vw, 0.5vh;
-	font-size: 10px;/* cursor: pointer */
+	color: white;
+	padding: 0.5vw, 0.5vh;
+	font-size: 0.7vw;
+	cursor: pointer;
 	margin: 1vw;
-	display: grid;
-	min-width: 50px;	
+	display: grid;	
 }
 #studioView{
 	position: absolute;
@@ -313,8 +316,8 @@ div.card-body.style5:hover {
 	background-color: rgba(67, 59, 82, 0.3);
 	width: auto;
 	height: auto;
-	   -o-object-fit: contain;
-	      object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 	min-height: 20vh;
 	min-width: 45vw;
 	max-height: 70vh;	
@@ -407,78 +410,7 @@ div.card-body.style5:hover {
 
 .style7 {
 	font-family: fantasy;
-	height: 462px;
-	/* margin-top: 30px */
-	/* margin-bottom: 30px */
-}
-
-.style8 {position: static;
-	position: -webkit-sticky;
-	background-attachment: scroll;
-}
-
-.style9 {
-	float: none;
-	clear: none;
-	background-size: auto;
-	position: relative;
-}
-
-@media (min-width: 576px) {
-
-.btnvoiceroom {
-		overflow: visible;
-	}
-
-.rowSize {
-		min-height: 10vh;
-	}
-}
-
-.style14 {
-	height: 15vh;
-}
-
-@media (min-width: 768px) {
-
-.style14 {
-	height: 15vh;
-}
-}
-
-.style15 {
-	display: block;
-}
-
-.style16 {
-	max-width: 720px;
-}
-
-@media (min-width: 1200px) {
-
-.style10 {
-	position: relative;
-	bottom: 10px;
-}
-
-}
-
-.style18 {
-	 position: absolute;
 }
 
 
-.style20 {
-	padding-top: 0px;
-}
-
-
-.rowSize {
-	min-height: 10vh;
-}
-
-
-.cardPad {
-	margin-top: 20px
-	/* min-height: 10px */  
-}
+ 

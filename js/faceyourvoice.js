@@ -16,6 +16,9 @@ function InitRoomAmbience2(selectedCharacter){
 }
 
 function playVoicesInLoop(){ 
+  if(!localStorage.getItem("record1")){
+    alert("You have been silent. Please record atleast one voice.");
+  }
   var checknext = currentrecording + 1;
   if(currentrecording < 5 && localStorage.getItem("record"+ checknext.toString()) ){
     currentrecording++;      
@@ -33,7 +36,7 @@ function PlayNextOrLoop(){
 }
 
 
-// function to transform the voice to a different character based on parameter passed from HTML
+// function to transform the voice to a different character based on voice parameters in lookup 
 async function transformVoice(blob, transformEffects) { 
    let arrayBuffer = await blob.arrayBuffer();
    let ctx = new AudioContext();
