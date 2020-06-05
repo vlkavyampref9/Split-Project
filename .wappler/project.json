@@ -20,7 +20,6 @@
       "type": "local"
     }
   ],
-  "firebaseProjectID": "",
-  "gitURL": "",
-  "projectType": "web"
+  "projectType": "web",
+  "targets": []
 }
