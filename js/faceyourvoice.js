@@ -8,14 +8,16 @@ var globalTransformedVoiceBlob = undefined;
  
 function InitRoomAmbience2(selectedCharacter){
   document.getElementById("MyVoiceCharacter").style.backgroundImage = "url('"+selectedCharacter+"')"; 
-  document.getElementById("CharacterTitle").innerHTML = "Meet the " + localStorage.getItem("SelectedCharacter");   
+  document.getElementById("CharacterTitle").innerHTML = "Meet the " + localStorage.getItem("SelectedCharacter"); 
+  document.getElementById("VoiceCharacterAudio").hidden = true;  
   au.controls = true;
 	au.src = null;
 	au.title = "yourvoices";
   au.className = "audioRecordedTrack";
 }
 
-function playVoicesInLoop(){ 
+function playVoicesInLoop(){
+  document.getElementById("VoiceCharacterAudio").hidden = false;
   if(!localStorage.getItem("record1")){
     alert("You have been silent. Please record atleast one voice.");
   }
@@ -37,7 +39,7 @@ function PlayNextOrLoop(){
 
 
 // function to transform the voice to a different character based on voice parameters in lookup 
-async function transformVoice(blob, transformEffects) { 
+async function transformVoice(blob, transformEffects, audioElementID) { 
    let arrayBuffer = await blob.arrayBuffer();
    let ctx = new AudioContext();
    var outputAudioBuffer = await ctx.decodeAudioData(arrayBuffer); 
@@ -83,7 +85,7 @@ function transformRecordingFromDataBase(StoreName, IndexName, RecordingName) {
       value.onsuccess = function(){ 
           console.log("DB fetch success");   
           globalOriginalVoiceBlob = value.result.recordingBlob;         
-          transformVoice(value.result.recordingBlob, JSON.parse(localStorage.getItem("SelectedCharacterEffects")));                                      
+          transformVoice(value.result.recordingBlob, JSON.parse(localStorage.getItem("SelectedCharacterEffects")), "VoiceCharacterAudio");                                      
       };
 
       tx.oncomplete = function(){            
