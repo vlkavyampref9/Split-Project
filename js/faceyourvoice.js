@@ -5,55 +5,54 @@ var currentrecording = 0;
 var globalOriginalVoiceBlob = undefined;
 var globalTransformedVoiceBlob = undefined;
 
- 
-function InitRoomAmbience2(selectedCharacter){
-  document.getElementById("MyVoiceCharacter").style.backgroundImage = "url('"+selectedCharacter+"')"; 
-  document.getElementById("CharacterTitle").innerHTML = "Meet the " + localStorage.getItem("SelectedCharacter"); 
-  document.getElementById("VoiceCharacterAudio").hidden = true;  
+
+function InitRoomAmbience2(selectedCharacter) {
+  document.getElementById("MyVoiceCharacter").src = selectedCharacter;
+  var charName = document.getElementById('charName');
+  charName.innerHTML = localStorage.getItem("SelectedCharacter");
+  charName.style = "transform:translateY(-70vh);transition-duration: 5s;transition-delay: 2s;color:green;font-size:20px;left:35vw";
+  document.getElementById("MyVoiceCharacter").style = "width:85vw;height:50vh;transition-duration: 5s;transition-delay: 2s;transform:translate(-30vw, -30vh);visibility:visible;"
+  document.getElementById("PlayButton").style = "transition-delay: 7s;font-size:18px; transition-duration:2s; bottom: 30vh;"
+  document.getElementById("audio").style = "transition-delay:8s;transition-duration:1s;bottom: 10vh; visibility: visible;left: 10vw;"
   au.controls = true;
-	au.src = null;
-	au.title = "yourvoices";
+  au.src = null;
+  au.title = "yourvoices";
   au.className = "audioRecordedTrack";
 }
 
-function playVoicesInLoop(){
-  document.getElementById("VoiceCharacterAudio").hidden = false;
-  if(!localStorage.getItem("record1")){
-    alert("You have been silent. Please record atleast one voice.");
-  }
+function playVoicesInLoop() {
   var checknext = currentrecording + 1;
-  if(currentrecording < 5 && localStorage.getItem("record"+ checknext.toString()) ){
-    currentrecording++;      
+  if (currentrecording < 5 && localStorage.getItem("record" + checknext.toString())) {
+    currentrecording++;
   }
-  else{
+  else {
     currentrecording = 1;
   }
-  var localname = "record"+ currentrecording.toString();
+  var localname = "record" + currentrecording.toString();
   transformRecordingFromDataBase("RecordingsStore", "recordingName", localname);  
-  document.getElementById("PlayButton").disabled = true;      
+  document.getElementById("PlayButton").disabled = true;    
 }
 
 function PlayNextOrLoop(){
   document.getElementById("PlayButton").disabled = false;   
 }
 
+// function to transform the voice to a different character based on parameter passed from HTML
+async function transformVoice(blob, transformEffects) {
+  let arrayBuffer = await blob.arrayBuffer();
+  let ctx = new AudioContext();
+  var outputAudioBuffer = await ctx.decodeAudioData(arrayBuffer); 
+  var iter;
+  for(iter = 0; iter < transformEffects.length; iter++){
+   outputAudioBuffer = await window[transformEffects[iter].name+"Transformer"](outputAudioBuffer, transformEffects[iter].params);    
+  }   
+  let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer); 
+  globalTransformedVoiceBlob = outputWavBlob; 
+  au.src = URL.createObjectURL(outputWavBlob);   
+  au.play();  
+} 
+  
 
-// function to transform the voice to a different character based on voice parameters in lookup 
-async function transformVoice(blob, transformEffects, audioElementID) { 
-   let arrayBuffer = await blob.arrayBuffer();
-   let ctx = new AudioContext();
-   var outputAudioBuffer = await ctx.decodeAudioData(arrayBuffer); 
-   var iter;
-   for(iter = 0; iter < transformEffects.length; iter++){
-    outputAudioBuffer = await window[transformEffects[iter].name+"Transformer"](outputAudioBuffer, transformEffects[iter].params);    
-   }   
-   let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer); 
-   globalTransformedVoiceBlob = outputWavBlob; 
-   au.src = URL.createObjectURL(outputWavBlob);   
-   au.play();  
- } 
-
- 
 function transformRecordingFromDataBase(StoreName, IndexName, RecordingName) { 
   window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
   if(!window.indexedDB){
@@ -65,7 +64,7 @@ function transformRecordingFromDataBase(StoreName, IndexName, RecordingName) {
   tx,
   store,
   index;
-  
+
   request.onerror = function(e){
       console.log("There was an error: " + e.target.errorCode);
       };
@@ -85,7 +84,7 @@ function transformRecordingFromDataBase(StoreName, IndexName, RecordingName) {
       value.onsuccess = function(){ 
           console.log("DB fetch success");   
           globalOriginalVoiceBlob = value.result.recordingBlob;         
-          transformVoice(value.result.recordingBlob, JSON.parse(localStorage.getItem("SelectedCharacterEffects")), "VoiceCharacterAudio");                                      
+          transformVoice(value.result.recordingBlob, JSON.parse(localStorage.getItem("SelectedCharacterEffects")));                                      
       };
 
       tx.oncomplete = function(){            
@@ -96,9 +95,12 @@ function transformRecordingFromDataBase(StoreName, IndexName, RecordingName) {
   };
 
 };
-  
+
 window.addEventListener('DOMContentLoaded', (event) => {
-   au = document.getElementById("VoiceCharacterAudio");  
+  au = document.getElementById("VoiceCharacterAudio");  
    InitRoomAmbience2(localStorage.getItem("SelectedCharacterGif"));
    }); 
+
+
+  
 
