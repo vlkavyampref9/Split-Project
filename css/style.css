@@ -50,7 +50,9 @@ h3.section-title {
 }
 #page-footer {
     padding: 15px 0 10px;
-    font-size: 12px;
+	font-size: 12px;
+	margin-top: 5vh;
+	display: block;
 }
 #roomselectcontainer{
 	height: 500px;
@@ -74,14 +76,14 @@ h3.section-title {
 	width: 100%;
 	overflow: auto;
 }
-.style3 {
+.styleJokerRant {
 	height: 400px;
 	background-repeat: repeat-x;
 	background-size: cover;
 	background-attachment: scroll;
 	background-image: url("../assets/Gifs/JokerRant.gif");
 }
-.style4 {
+.styleFlyingThroughClouds {
 	height: 400px;
 	background-size: cover;
 	background-repeat: repeat-y;
@@ -89,13 +91,40 @@ h3.section-title {
 	border-style: none;
 	background-image: url("../assets/Gifs/RisingAbove.gif");
 }
-.style5 {
+.styleWhispersOfGreenSpaces {
 	height: 400px;
 	background-repeat: repeat-y;
 	background-attachment: scroll;
 	border-style: none;
 	background-size: cover;
 	background-image: url("../assets/Gifs/WhispersOfGreenSpaces.gif");
+}
+
+.styleLightAtEndOfTunnel {
+	height: 400px;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;
+	background-size: cover;
+	background-image: url("../assets/Gifs/LightTunnel.gif");
+}
+
+.styleSpaceMaker {
+	height: 400px;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;
+	background-size: cover;
+	background-image: url("../assets/Gifs/ThirdEye.gif");
+}
+
+.styleWatchingWaves {
+	height: 400px;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;
+	background-size: cover;
+	background-image: url("../assets/Gifs/WatchingWaves.gif");
 }
 
 .style60 {
@@ -163,7 +192,7 @@ div.card-body.style60:hover {
 
 .style49 {
 
-	background-image: url("../assets/Gifs/characters/Shakeup.gif");
+	background-image: url("../assets/Gifs/characters/bossyboss.gif");
 }
 
 .style50 {
@@ -184,6 +213,7 @@ div.card-body.style60:hover {
 	border-top-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
+	font-family: Verdana, Geneva, sans-serif;
 }
 .style12 {
 	font-size: 1.5rem;
@@ -191,6 +221,7 @@ div.card-body.style60:hover {
 	border-top-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
+	font-family: Verdana, Geneva, sans-serif;
 }
 .style13 {
 	font-size: 1.5rem;
@@ -199,33 +230,54 @@ div.card-body.style60:hover {
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
 }
-.style3:hover {
-	height: 400px;
-	background-image: url("../assets/Gifs/JokerRant.gif");
-	background-size: cover;
-	background-repeat: repeat-x;
-}
-div.card-body.style3 {
+
+div.card-body.styleJokerRant {
 	cursor: pointer;
 	opacity: 0.7;
 }
-div.card-body.style3:hover {
+div.card-body.styleJokerRant:hover {
 	opacity: 1;
 }
-div.card-body.style4 {
+div.card-body.styleFlyingThroughClouds {
 	cursor: pointer;
 	opacity: 0.7 ;
 }
-div.card-body.style4:hover {
+div.card-body.styleFlyingThroughClouds:hover {
 	opacity: 1 ;
 }
-div.card-body.style5 {
+div.card-body.styleWhispersOfGreenSpaces {
 	cursor: pointer;
 	opacity: 0.7 ;
 }
-div.card-body.style5:hover {
+div.card-body.styleWhispersOfGreenSpaces:hover {
 	opacity: 1 ;
 }
+
+div.card-body.styleLightAtEndOfTunnel {
+	cursor: pointer;
+	opacity: 0.7 ;
+}
+div.card-body.styleLightAtEndOfTunnel:hover {
+	opacity: 1 ;
+}
+
+div.card-body.styleSpaceMaker {
+	cursor: pointer;
+	opacity: 0.7 ;
+}
+div.card-body.styleSpaceMaker:hover {
+	opacity: 1 ;
+}
+
+div.card-body.styleWatchingWaves {
+	cursor: pointer;
+	opacity: 0.7 ;
+}
+div.card-body.styleWatchingWaves:hover {
+	opacity: 1 ;
+}
+
+
 #voiceroomvideo{
 	position: absolute;
 	top: 0vh;
@@ -245,13 +297,13 @@ div.card-body.style5:hover {
 }
 
 .btnvoiceroom {
-	width: 5vw;
-	height: 5vw;
+	width: 15vw;
+	height: 15vw;
 	background-color: rgb(102, 87, 240);
 	border: none;
 	color: white;
 	padding: 0.5vw, 0.5vh;
-	font-size: 0.7vw;
+	font-size: 2vw;
 	cursor: pointer;
 	margin: 1vw;
 	display: grid;	
@@ -281,7 +333,7 @@ div.card-body.style5:hover {
 }
 .iconvoiceroom{
 	color: white; 
-	font-size: 2vw;	
+	font-size: 5vw;	
 	margin: 0.5vw;
 }
 .eyevoiceroom{
@@ -292,18 +344,18 @@ div.card-body.style5:hover {
 }
 .btnvoiceroom:disabled .iconvoiceroom{
 	color: palevioletred; 
-	font-size: 2vw;	
+	font-size: 5vw;	
 	margin: 0.5vw;
 }
 
 .mutebtnvoiceroom{
-	width: 5vw;
-	height: 5vw;
+	width: 15vw;
+	height: 15vw;
 	background-color: rgb(173, 113, 230);
 	border: none;
 	color: white;
 	padding: 0.5vw, 0.5vh;
-	font-size: 0.7vw;
+	font-size: 2vw;
 	cursor: pointer;
 	margin: 1vw;
 	display: grid;	
@@ -311,7 +363,7 @@ div.card-body.style5:hover {
 #studioView{
 	position: absolute;
 	top: 5vh;
-	left: 1vw;
+	left: 0vw;
 	z-index: 20;
 	background-color: rgba(67, 59, 82, 0.3);
 	width: auto;
@@ -319,7 +371,7 @@ div.card-body.style5:hover {
 	-o-object-fit: contain;
 	   object-fit: contain;
 	min-height: 20vh;
-	min-width: 45vw;
+	min-width: 100vw;
 	max-height: 70vh;	
 	overflow-y: scroll;
 }
@@ -367,40 +419,45 @@ div.card-body.style5:hover {
 	opacity: 0.3;
 } 
 
-.audioRecordedSection{
-	display: table-row;
-	vertical-align: middle;
-}
-
 .audioRecordedTrack{
-	width: 30vw;
+	width: 50vw;
+	margin-bottom: 2vh;
 	display: table-cell;
 }
 
-.audioDownloadButton{
-	font-size: 1vw;
-	color: white;
-	padding: 2px;
-	display: table-cell;
+#recordingsList{
+	position: relative; 
+	top: 3vh; 
+	margin-bottom: 5vh;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 #CharacterAssignPageLoadTriggerButton{
 	position: relative;
-    left: 10vw;
-    top: 1.5vh;
+    width: 30vw;
+    height: 10vh;
+    font-size: 2vw;
+}
+
+#InspireMeTriggerButton{
+		position: relative;
+		width: 30vw;
+		height: 10vh;
+		font-size: 2vw;
 }
 
 #MyVoiceCharacter{
-	min-width: 50vw;
+	min-width: 70vw;
 	min-height: 50vh;
-	width: 50vw;
+	width: 70vw;
 	height: 50vh;
 	position: relative;
 	background-color:white;
 	background-position: center;
 	background-size: contain;
-	background-repeat: no-repeat;
-	left: 25vw;
+	background-repeat: no-repeat;	
 }
 
 .style6 {
@@ -411,6 +468,326 @@ div.card-body.style5:hover {
 .style7 {
 	font-family: fantasy;
 }
+
+.style9 {
+	position: fixed;
+	bottom: 5vh;}
+
+.style10 {
+	clear: both;
+	position: fixed;
+	left: 25vw;
+	right: 25vw;
+}
+
+.style14 {
+	position: fixed;
+	bottom: 0vh;
+}
+
+.style15 {
+	position: relative;
+}
+
+.style16 {
+	min-height: 50vh;
+}
+
+.style17 {
+	position: relative;
+	left: 25vw;
+	right: 25vh;
+}
+
+.style18 {
+	position: relative;
+	top: 2vh;
+}
+
+.style19 {
+	position: relative;
+	left: 20vw;
+	right: 20vw;
+}
+
+@media (min-width: 1200px) {
+
+.style17 {
+		position: static;
+	}
+
+.style19 {
+		position: static;
+	}
+
+.style30 {
+		position: fixed;
+		top: 10%;
+		z-index: 20;
+		background-color: rgba(0, 0, 0, 0.76);
+	}
+
+.style31 {
+		width: 10vw;
+		height: 5vh;
+		position: static;
+	}
+
+.style34 {
+		width: auto;
+		min-width: 40vw;
+		min-height: 10vh;
+	}
+   .style5 {
+		font-size: 2vw;
+	}
+   .style7 {
+		text-align: center;
+		color: #060d8c;
+	}
+}
+
+@media (min-width: 992px) {
+
+.style20 {
+		position: static;
+	}
+
+.style17 {
+		position: static;
+	}
+
+.style18 {
+		position: static;
+	}
+
+.style19 {
+		position: static;
+		float: none;
+	}
+
+.btnvoiceroom {
+		width: 5vw;
+		height: 5vw;
+		font-size: 0.7vw;
+	}
+
+.mutebtnvoiceroom {
+		width: 5vw;
+		height: 5vw;
+		font-size: 0.7vw;
+	}
+
+.iconvoiceroom {
+		font-size: 2vw;
+	}
+
+.btnvoiceroom:disabled .iconvoiceroom{	 
+	font-size: 2vw;		
+}
+
+.style15 {
+		position: static;
+	}
+
+.style34 {
+		width: auto;
+		min-width: 40vw;
+	}
+}
+
+.style21 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 3em;
+}
+
+.style22 {
+	position: -webkit-sticky;
+	position: sticky;
+	bottom: 0vh;
+}
+
+.style23 {
+	position: fixed;
+	bottom: 0vh;
+}
+
+.style24 {
+	position: static;
+}
+
+.style25 {
+	position: static;
+	position: static;
+}
+
+.style26 {
+	color: #000;
+	background-color: #1a0202;
+}
+
+.style27 {
+	background-color: #170101;
+}
+
+.style28 {
+	min-width: 100%;
+	min-height: 100%;}
+
+.style29 {
+	position: relative;
+	position: relative;
+	position: -webkit-sticky;
+	position: relative;
+}
+
+.style30 {
+	position: fixed;
+}
+
+.style32 {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.style33 {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.style34 {
+	min-width: 60vw;
+	margin-bottom: 5vh;
+	width: 90vw;
+}
+
+.style35 {
+	margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+
+.style19 {
+		position: relative;
+		left: 25vw;
+	}
+
+.style12 {
+		overflow: auto;
+	}
+}
+
+@media (min-width: 576px) {
+
+.style19 {
+		left: 25vw;
+		position: static;
+	}
+
+.style12 {
+		overflow: auto;
+	}
+}
+
+.style36 {
+	width: 100vw;
+	min-width: 100vw;
+}
+
+#cuecanvas{
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+	background-color: black;
+	z-index: 20;
+}
+
+.style3 {
+	background-color: #d91d1d;
+}
+
+.style4 {
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	font-size: 4vw;
+	text-align: center;
+}
+
+
+.scroll-up {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+ background: yellow;
+ color: orange;
+ border: 1px solid orange;
+}
+.scroll-up p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */	
+ -webkit-transform:translateY(100%);	
+         transform:translateY(100%);
+ /* Apply animation to this element */
+ -webkit-animation: scroll-down 25s linear;
+         animation: scroll-down 25s linear;
+}
+/* Move it (define the animation) */
+@-webkit-keyframes scroll-down {
+ 0%   { /* Browser bug fix */ /* Browser bug fix */
+ -webkit-transform: translateY(100%);
+         transform: translateY(100%); 		
+ }
+ 100% { /* Browser bug fix */ /* Browser bug fix */
+ -webkit-transform: translateY(20%);
+         transform: translateY(20%); 
+ }
+}
+@keyframes scroll-down {
+ 0%   { /* Browser bug fix */ /* Browser bug fix */
+ -webkit-transform: translateY(100%);
+         transform: translateY(100%); 		
+ }
+ 100% { /* Browser bug fix */ /* Browser bug fix */
+ -webkit-transform: translateY(20%);
+         transform: translateY(20%); 
+ }
+}
+
+.scroll-down {
+	overflow: hidden;
+	position: relative;	
+   }
+   .scroll-down p {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	line-height: 50px;
+	text-align: center;
+	/* Starting position */	
+	-webkit-transform:translateY(-120%);	
+	        transform:translateY(-120%);
+	/* Apply animation to this element */
+	-webkit-animation: scroll-down 35s linear;
+	        animation: scroll-down 35s linear;
+   }
+   /* Move it (define the animation) */
+   @keyframes scroll-down {
+	0%   { /* Browser bug fix */ /* Browser bug fix */
+	-webkit-transform: translateY(-120%);
+	        transform: translateY(-120%); 		
+	}
+	100% { /* Browser bug fix */ /* Browser bug fix */
+	-webkit-transform: translateY(100%);
+	        transform: translateY(100%); 
+	}
+   }
+
+
 
 
  
