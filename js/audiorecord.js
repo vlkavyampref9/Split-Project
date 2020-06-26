@@ -111,7 +111,7 @@ function stopRecording() {
 	pauseButton.hidden = true;
 	stopButton.hidden = true;
 	document.getElementById("studioView").hidden = false;
-	document.getElementById("studioHideButton").hidden = false;
+	//document.getElementById("studioHideButton").hidden = false;
 	document.getElementById("recordingsoundwave").hidden = true;
 
 
@@ -154,7 +154,6 @@ function createDownloadLink(blob) {
 	//save to disk link
 	link.href = url;
 	link.download = filename + ".mp3"; //download forces the browser to download the file using the  filename
-	link.innerHTML = "Download";
 	link.className = "audioDownloadButton";
 
 	//add the new audio element to li
@@ -167,6 +166,9 @@ function createDownloadLink(blob) {
 	//transformVoice(blob, 1.9, localStorageName+"transform");
 	//add the li element to the ol
 	document.getElementById("recordingsList").appendChild(li);
+	document.getElementById("load").style.display = "none";
+	document.getElementById("who").style.display = "block";
+	
 	console.log(recordingsList);
 }
 

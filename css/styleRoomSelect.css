@@ -1,0 +1,109 @@
+.style9 {
+	color: #333333;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+* {-webkit-box-sizing:border-box;box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 60%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+
+.text1 {
+  color: #f2f2f2;
+  font-size: 30px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 70vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.style12 {
+	min-height: 300px;
+    max-height: 600px;
+    height: 55vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+	text-align: center;
+    width: 80%;
+    margin-top: 50px;
+    box-shadow: 7px 2px 5px;
+}
+
+.style13 {
+    position: relative;
+    margin-top: -30px;
+}
+
+#joker {
+    background-image: url(../assets/Gifs/JokerRant.gif);
+}
+#clouds {
+    background-image: url(../assets/Gifs/RisingAbove.gif);
+}
+#greenspaces {
+    background-image: url(../assets/Gifs/WhispersOfGreenSpaces.gif);
+}
+#waves {
+    background-image: url(../assets/Gifs/WatchingWaves.gif);
+}

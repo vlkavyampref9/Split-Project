@@ -1,0 +1,30 @@
+.style25 {
+    -webkit-transform:translateX(0) scale(1.8);
+    transform:translateX(0) scale(1.8);
+    z-index:99;
+    position: absolute;
+    top: 30vh;
+}
+
+
+.listen {
+	font-size: 23px;
+	color: #050505;
+	font-family: 'Roboto', sans-serif;
+	position: absolute;
+	bottom: 10vh;
+	text-align: center;
+	left: 6vw;
+	width: 90vw;
+}
+
+.audioBox {
+	visibility: hidden;
+	position: absolute;
+}
+
+.container2 {
+    position: absolute;
+    top: 10vh;
+    left: 37vw;
+  }

@@ -5,17 +5,17 @@
 	<title></title>
 	<meta charset=" utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
+	<!--<script src="../dmxAppConnect/dmxAppConnect.js"></script>-->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.js"></script>
-
+	<!--<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">-->
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/style.css" />
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+	<link rel="stylesheet" href="../css/styleMain.css" />
+	<link rel="stylesheet" href="../css/styleFaceVoice.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 
-	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
+	<!--<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
 	<link rel="stylesheet" href="../bootstrap/4/pulse/bootstrap.min.css" />
 	<script src="../dmxAppConnect/dmxBackgroundVideo/dmxBackgroundVideo.js" defer=""></script>
 	<script src="../dmxAppConnect/dmxBootstrap4Tooltips/dmxBootstrap4Tooltips.js" defer=""></script>
@@ -24,23 +24,27 @@
 	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.css" />
 	<script src="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js" defer=""></script>
 	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/themes/default.css" />
-	<script src="../dmxAppConnect/dmxVideo/dmxVideo.js" defer=""></script>
+	<script src="../dmxAppConnect/dmxVideo/dmxVideo.js" defer=""></script>-->
 
 </head>
 
 <body id="faceyourvoiceindex" class="style1">
-	<div class="style1">
-		<div id="characterviewcontainer" class="container1">
-			<img id="MyVoiceCharacter" class="style25 charBox">
+	<div class="style1 blueRoom">
+		<div class="container2">
+		<img id="MyVoiceCharacter" src = "../assets/Gifs/characters/bossyboss.gif"class="style25 charBox">
 		</div>
-		<p id="charName" class="charName">Angry Baby</p>
+		<div id="nameDiv" class="nameDiv">
+			<p id="charName" class="charName">Angry Baby</p>
+		</div>
+		
 		<button id="PlayButton" class="listen" onclick="playVoicesInLoop()">LISTEN TO YOUR FEELINGS!</button>
 		<div id="audio" class="audioBox">
 			<audio id="VoiceCharacterAudio" onended="PlayNextOrLoop()" onclick="PlayTransform()"></audio>
 		</div>
 	</div>
-	<footer id="page-footer" class="bg-dark">
-		<div class="container"> <span class="text-muted">Copyright www.split.com</span> </div>
+	<footer id="page-footer" class="style22">
+		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
+		<div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
 	</footer>
 
 	<script src="../bootstrap/4/js/popper.min.js"></script>

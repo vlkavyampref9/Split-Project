@@ -1,14 +1,17 @@
+
+
 function closeDiv() {
    document.getElementById("headAnimate").style.display = "none";
-   document.getElementById("voiceAnimate").style.display = "block";
-   document.getElementById("voiceAnimate").classList.add("w3-animate-opacity");
+   document.getElementById("voiceAnimate").classList.add("voicefadein");
 
 }
 
 // close the div in 5 secs
-window.setTimeout(closeDiv, 5000);
+window.setTimeout(closeDiv, 10000);
 
 function InitRoomAmbience(themevideourl) {
+   var letout = document.getElementById('letout');
+   letout.style = "transform:translateY(-50vh);transition-duration: 4s;transition-delay: 3s;color:rgb(218,218,218);font-size:40px;left:17vw;";
    var videoelement = document.getElementById("voiceroomvideo");
    videoelement.src = themevideourl;
    videoelement.play();
@@ -16,7 +19,7 @@ function InitRoomAmbience(themevideourl) {
    document.getElementById("playButton").hidden = true;
    document.getElementById("stopButton").hidden = true;
    document.getElementById("studioView").hidden = true;
-   document.getElementById("studioHideButton").hidden = true;
+   //document.getElementById("studioHideButton").hidden = true;
    document.getElementById("recordingsoundwave").hidden = true;
 
 }
@@ -24,15 +27,24 @@ function InitRoomAmbience(themevideourl) {
 function toggleMusic() {
    var videoelement = document.getElementById("voiceroomvideo");
    var thisButton = document.getElementById("unmuteButton");
+   var thatButton = document.getElementById("muteButton");
    //thisButton.className = videoelement.muted ? "unmutebtnvoiceroom" : "mutebtnvoiceroom";
    videoelement.muted = videoelement.muted ? false : true;
    videoelement.volume = videoelement.muted ? 0 : 01;
+   if (videoelement.muted == true){
+      thatButton.style.display = "none";
+      thisButton.style.display = "block";
+   }
+   else {
+      thisButton.style.display = "none";
+      thatButton.style.display = "block";
+   }
 }
 
-function toggleStudioView() {
+/*function toggleStudioView() {
    var thisView = document.getElementById("studioView");
    thisView.hidden = thisView.hidden ? false : true;
-}
+}*/
 
 function switchViewToCharacterSelection() {
    window.location.href = 'characterselection.html';

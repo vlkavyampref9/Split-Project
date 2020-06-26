@@ -1,0 +1,79 @@
+  
+  .c1{
+    -webkit-transform:translateX(0) scale(1.8);
+            transform:translateX(0) scale(1.8);
+    z-index:99;
+    position: absolute;
+    top: 30vh;
+    background-image: url("../assets/Gifs/characters/AngryBaby.gif");
+  }
+  .c2{
+   -webkit-transform:translateX(90px) scale(1);
+           transform:translateX(90px) scale(1);
+    background-image: url("../assets/mobile/characters/DramaQueen.gif");
+    opacity: 0.8;
+    top:2vh;
+  }
+  .c3{
+    visibility: hidden;
+    background-image: url("../assets/mobile/characters/BossyBoss.gif");
+  }
+  .c4{
+      visibility: hidden;
+      background-image: url("../assets/mobile/characters/coolGirl.gif");
+  }
+  .c5{
+      -webkit-transform:translateX(-90px) scale(1);
+           transform:translateX(-90px) scale(1);
+    background-image: url("../assets/mobile/characters/saint.gif");
+    opacity: 0.8;
+    top: 2vh;
+  }
+  /*
+  .c6{
+      visibility: hidden;
+      background-image: url("../assets/mobile/characters/nosyAunty.gif");
+  }
+  .c7{
+      visibility: hidden;
+      background-image: url("../assets/mobile/characters/naggingGran.gif");
+  }
+  .c8{
+      visibility: hidden;
+      background-image: url("../assets/mobile/characters/JumpyDad.gif");
+  }
+  .c9{
+      visibility: hidden;
+      background-image: url("../assets/mobile/characters/scheming.gif");
+  }
+  .c10{
+      visibility: hidden;
+      background-image: url("../assets/mobile/characters/saint.gif");
+  }
+  .c11{
+      visibility: hidden;
+      background-image: url("../assets/mobile/characters/controlling.gif");
+  }
+  .c12{
+   -webkit-transform:translateX(-90px) scale(1);
+           transform:translateX(-90px) scale(1);
+    background-image: url("../assets/Gifs/characters/AngryBoy.gif");
+    opacity: 0.8;
+    top: 2vh;
+  }*/
+
+  .charMax{
+    max-width: 150px;
+    max-height: 200px;
+  }
+
+  .container1 {
+    position: absolute;
+    top: 10vh;
+    height: 65%;
+    left: 50%;
+    margin-left: -20%;
+  }
+
+
+  

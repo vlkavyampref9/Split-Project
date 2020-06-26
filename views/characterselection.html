@@ -7,58 +7,49 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="../dmxAppConnect/dmxAppConnect.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.js"></script>
-
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../css/style.css" />
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
-	<script src="../js/characterSlider.js"></script>
+	<link rel="stylesheet" href="../css/styleMain.css" />
+	<link rel="stylesheet" href="../css/styleCharSel.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-
-	<script src="../dmxAppConnect/dmxBootstrap4Navigation/dmxBootstrap4Navigation.js" defer=""></script>
-	<link rel="stylesheet" href="../bootstrap/4/pulse/bootstrap.min.css" />
-	<script src="../dmxAppConnect/dmxBackgroundVideo/dmxBackgroundVideo.js" defer=""></script>
-	<script src="../dmxAppConnect/dmxBootstrap4Tooltips/dmxBootstrap4Tooltips.js" defer=""></script>
-	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/medium-editor.css" />
 	<script src="../dmxAppConnect/dmxMediumEditor/medium-editor.js" defer=""></script>
-	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.css" />
-	<script src="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js" defer=""></script>
-	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/themes/default.css" />
-	<script src="../dmxAppConnect/dmxVideo/dmxVideo.js" defer=""></script>
-
+	
 </head>
 
 <body class="style1">
-	<div class="style1">
-		<p id="charSel" class="selectChar">Select Your Character</p>
+	<div class="style1 blueRoom">
 		<div class="container1">
-			<img src="../assets/Gifs/characters/AngryBaby.gif" alt="" class="c1 charBox" onclick="switchViewToFaceVoice('Fussy Baby')">
-			<img src="../assets/Gifs/characters/AngryBoy.gif" alt="" class="c2 charBox" onclick="switchViewToFaceVoice('Little Boy')">
-			<img src="../assets/Gifs/characters/angrymom.gif" alt="" class="c3 charBox" onclick="switchViewToFaceVoice('Angry Mom')">
-			<img src="../assets/Gifs/characters/DramaQueen.gif" alt="" class="c4 charBox" onclick="switchViewToFaceVoice('Drama Queen')">
-			<img src="../assets/Gifs/characters/HawwAunty.gif" alt="" class="c5 charBox" onclick="switchViewToFaceVoice('Nosy Aunt')">
-			<img src="../assets/Gifs/characters/JumpyDad.gif" alt="" class="c6 charBox" onclick="switchViewToFaceVoice('Jumpy Dad')">
-			<img src="../assets/Gifs/characters/OldLady.gif" alt="" class="c7 charBox" onclick="switchViewToFaceVoice('Nagging Gran')">
-			<img src="../assets/Gifs/characters/ParentsWorried.gif" alt="" class="c8 charBox" onclick="switchViewToFaceVoice('Fussy Baby')">
-			<img src="../assets/Gifs/characters/scheming.gif" alt="" class="c9 charBox" onclick="switchViewToFaceVoice('Vile Uncle')">
-			<img src="../assets/Gifs/characters/Shakeup.gif" alt="" class="c10 charBox" onclick="switchViewToFaceVoice('Shake Up')">
-			<img src="../assets/Gifs/characters/spongebob2.gif" alt="" class="c11 charBox" onclick="switchViewToFaceVoice('Fussy Baby')">
+			<div alt="" class="c1 charBox charMax" onclick="switchViewToFaceVoice('Cry Baby')"></div>
+			<div  alt="" class="c2 charBox charMax" onclick="switchViewToFaceVoice('Drama Queen')"></div>
+			<div  alt="" class="c3 charBox charMax" onclick="switchViewToFaceVoice('Control Freak')"></div>
+			<div  alt="" class="c4 charBox charMax" onclick="switchViewToFaceVoice('Chill Pill')"></div>
+			<div  alt="" class="c5 charBox charMax" onclick="switchViewToFaceVoice('The Saint')"></div>
+			<!--<div  alt="" class="c6 charBox charMax" onclick="switchViewToFaceVoice('Nosy Aunt')"></div>
+			<div  alt="" class="c7 charBox charMax" onclick="switchViewToFaceVoice('Nagging Gran')"></div>
+			<div  alt="" class="c8 charBox charMax" onclick="switchViewToFaceVoice('Jumpy Dad')"></div>
+			<div  alt="" class="c9 charBox charMax" onclick="switchViewToFaceVoice('Vile Uncle')"></div>
+			<div  alt="" class="c10 charBox charMax" onclick="switchViewToFaceVoice('Saint')"></div>
+			<div  alt="" class="c11 charBox charMax" onclick="switchViewToFaceVoice('Control Devil')"></div>
+			<div  alt="" class="c12 charBox charMax" onclick="switchViewToFaceVoice('Little Boy')"></div>-->
 		</div>
 		<!-- Next and previous buttons -->
 		<a class="prev">&#10094;</a>
 		<a class="next">&#10095;</a>
-		<p class="charName">Angry Baby</p>
+		<div class="nameDiv"><p class="charName center">Cry Baby</p></div>
+		
+		
 	</div>
-	<footer id="page-footer" class="style22">
-		<div class="container"> <span class="text-muted">Copyright www.split.com</span> </div>
+	<footer id="page-footer" class="bg-dark style22">
+		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
+		<div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
 	</footer>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="../bootstrap/4/js/popper.min.js"></script>
 	<script src="../bootstrap/4/js/bootstrap.min.js"></script>
-	<script src="../js/app.js"></script>
 	<script src="../js/characterselection.js"></script>
+	<script src="../js/characterSlider.js"></script>
 
 </body>
 
