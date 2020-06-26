@@ -147,7 +147,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#225462', end
     height: 3vh;
     position: absolute;
     left: 1vw;
-    top: 2vh;
+    top: 5vh;
     z-index: 50;
 	background: url("../assets/Gifs/RECORD\ GIF\ [WHITE].gif") repeat;
 	opacity: 1;

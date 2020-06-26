@@ -20,6 +20,7 @@
 	text-align: center;
 	left: 10vw;
 	width: 80vw;
+	z-index:100;
 }
 
 .audioBox {
