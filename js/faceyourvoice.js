@@ -9,7 +9,7 @@ var globalTransformedVoiceBlob = undefined;
 function InitRoomAmbience2(selectedCharacter) {
   document.getElementById("MyVoiceCharacter").src = selectedCharacter;
   var nameDiv = document.getElementById('nameDiv');
-  document.getElementById('charName').innerHTML = localStorage.getItem("SelectedCharacter");
+  document.getElementById('charName').innerHTML = "I am "+localStorage.getItem("SelectedCharacter");
   nameDiv.style = "transform:translateY(-75vh);transition-duration: 3s;transition-delay: 1s;";
   document.getElementById("MyVoiceCharacter").style = "width:100vw;height:60vh;transition-duration: 3s;transition-delay: 1s;transform:translate(-37vw, -30vh);visibility:visible;"
   document.getElementById("PlayButton").style = "transition-delay: 5s;font-size:18px; transition-duration:2s; bottom: 20vh;"
