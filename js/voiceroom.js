@@ -7,11 +7,11 @@ function closeDiv() {
 }
 
 // close the div in 5 secs
-window.setTimeout(closeDiv, 10000);
+window.setTimeout(closeDiv, 5000);
 
 function InitRoomAmbience(themevideourl) {
    var letout = document.getElementById('letout');
-   letout.style = "transform:translateY(-50vh);transition-duration: 4s;transition-delay: 3s;color:rgb(218,218,218);font-size:40px;left:17vw;";
+   letout.style = "transform:translateY(-50vh);transition-duration: 3s;transition-delay: 1s;color:rgb(218,218,218);font-size:40px;left:17vw;";
    var videoelement = document.getElementById("voiceroomvideo");
    videoelement.src = themevideourl;
    videoelement.play();

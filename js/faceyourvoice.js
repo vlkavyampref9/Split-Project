@@ -11,7 +11,7 @@ function InitRoomAmbience2(selectedCharacter) {
   var nameDiv = document.getElementById('nameDiv');
   document.getElementById('charName').innerHTML = "I am "+localStorage.getItem("SelectedCharacter");
   nameDiv.style = "transform:translateY(-75vh);transition-duration: 3s;transition-delay: 1s;";
-  document.getElementById("MyVoiceCharacter").style = "width:100vw;height:60vh;transition-duration: 3s;transition-delay: 1s;transform:translate(-37vw, -30vh);visibility:visible;"
+  document.getElementById("MyVoiceCharacter").style = "width:100vw;height:50vh;transition-duration: 3s;transition-delay: 1s;transform:translate(-37vw, -25vh);visibility:visible;"
   document.getElementById("PlayButton").style = "transition-delay: 5s;font-size:18px; transition-duration:2s; bottom: 20vh;"
   document.getElementById("audio").style = "transition-delay:6s;transition-duration:1s;bottom: 8vh; visibility: visible;left: 50%; margin-left: -150px;"
   au.controls = true;

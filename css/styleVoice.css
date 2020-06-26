@@ -14,7 +14,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#225462', end
 
 .headImg {
 	position: relative;
-    top: 80vh;
+	top: 75vh;
+    margin-bottom: 10px;
     display: block;
 }
 

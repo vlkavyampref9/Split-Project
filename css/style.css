@@ -81,7 +81,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59d8d5', end
 .nameDiv {
   position: absolute;
   z-index: 20;
-  bottom: 15vh;
+  bottom: 10vh;
   width: 100%;
   display: block;
   font-size: 30px;
