@@ -33,18 +33,18 @@ function createFadeBuffer(context, activeTime, fadeTime) {
     var length = length1 + length2;
     var buffer = context.createBuffer(1, length, context.sampleRate);
     var p = buffer.getChannelData(0);
-    
+
     console.log("createFadeBuffer() length = " + length);
-    
+
     var fadeLength = fadeTime * context.sampleRate;
 
     var fadeIndex1 = fadeLength;
     var fadeIndex2 = length1 - fadeLength;
-    
+
     // 1st part of cycle
     for (var i = 0; i < length1; ++i) {
         var value;
-        
+
         if (i < fadeIndex1) {
             value = Math.sqrt(i / fadeLength);
         } else if (i >= fadeIndex2) {
@@ -52,7 +52,7 @@ function createFadeBuffer(context, activeTime, fadeTime) {
         } else {
             value = 1;
         }
-        
+
         p[i] = value;
     }
 
@@ -60,8 +60,8 @@ function createFadeBuffer(context, activeTime, fadeTime) {
     for (var i = length1; i < length; ++i) {
         p[i] = 0;
     }
-    
-    
+
+
     return buffer;
 }
 
@@ -73,7 +73,7 @@ function createDelayTimeBuffer(context, activeTime, fadeTime, shiftUp) {
     var p = buffer.getChannelData(0);
 
     console.log("createDelayTimeBuffer() length = " + length);
-    
+
     // 1st part of cycle
     for (var i = 0; i < length1; ++i) {
         if (shiftUp)
@@ -103,7 +103,7 @@ function Jungle(context) {
     var output = context.createGain();
     this.input = input;
     this.output = output;
-    
+
     // Delay modulation.
     var mod1 = context.createBufferSource();
     var mod2 = context.createBufferSource();
@@ -162,7 +162,7 @@ function Jungle(context) {
 
     fade1.connect(mix1.gain);    
     fade2.connect(mix2.gain);
-        
+
     // Connect processing graph.
     input.connect(delay1);
     input.connect(delay2);    
@@ -170,7 +170,7 @@ function Jungle(context) {
     delay2.connect(mix2);
     mix1.connect(output);
     mix2.connect(output);
-    
+
     // Start
     var t = context.currentTime + 0.050;
     var t2 = t + bufferTime - fadeTime;
@@ -195,7 +195,7 @@ function Jungle(context) {
     this.mix2 = mix2;
     this.delay1 = delay1;
     this.delay2 = delay2;
-    
+
     this.setDelay(delayTime);
 }
 

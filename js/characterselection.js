@@ -2,22 +2,22 @@
 var CharacterList =
     [{
         character: "Drama Queen",
-        gifurl: "../assets/Gifs/characters/DramaQueen.gif",
+        gifurl: "../assets/mobile/characters/DramaQueen.gif",
         effects: [{ name: "pitchShift", params: { shift: 0.35 } }]
     },
     {
-        character: "Fussy Baby",
+        character: "Cry Baby",
         gifurl: "../assets/Gifs/characters/AngryBaby.gif",
         effects: [{ name: "pitchShift", params: { shift: 0.76 } }, { name: "speed", params: { multiplier: 1.2 } }]
     },
     {
-        character: "Cool Girl",
+        character: "Chill Pill",
         gifurl: "../assets/Gifs/characters/CoolGirl.gif",
         effects: [{ name: "pitchShift", params: { shift: 0.1 } }, { name: "speed", params: { multiplier: 1.2 } }]
     },
     {
         character: "Nosy Aunt",
-        gifurl: "../assets/Gifs/characters/HawwAunty.gif",
+        gifurl: "../assets/mobile/characters/nosyAunty.gif",
         effects: [{ name: "pitchShift", params: { shift: 0.35 } }]
     },
     {
@@ -31,15 +31,15 @@ var CharacterList =
         effects: [{ name: "pitchShift", params: { shift: -0.29 } }]
     },
     {
-        character: "Saint",
-        gifurl: "../assets/Gifs/characters/sage.gif",
+        character: "The Saint",
+        gifurl: "../assets/mobile/characters/saint.gif",
         effects: [{ name: "pitchShift", params: { shift: 0.4 } },
         { name: "speed", params: { multiplier: 0.75 } },
         { name: "delay", params: { feedback: 0.2, delayTime: 150, wetLevel: 0.2, dryLevel: 1, cutoff: 3000 } }]
     },
     {
         character: "Control Devil",
-        gifurl: "../assets/Gifs/characters/controlling.gif",
+        gifurl: "../assets/mobile/characters/controlling.gif",
         effects: [{ name: "pitchShift", params: { shift: -0.6 } }, { name: "speed", params: { multiplier: 1.15 } }]
     },
     {
@@ -48,8 +48,8 @@ var CharacterList =
         effects: [{ name: "pitchShift", params: { shift: 0.1 } }, { name: "speed", params: { multiplier: 1.2 } }]
     },
     {
-        character: "Bossy Boss",
-        gifurl: "../assets/Gifs/characters/bossyboss.gif",
+        character: "Control Freak",
+        gifurl: "../assets/mobile/characters/BossyBoss.gif",
         effects: [{ name: "pitchShift", params: { shift: -0.5 } }]
     },
     {
@@ -59,7 +59,7 @@ var CharacterList =
     },
     {
         character: "Vile Uncle",
-        gifurl: "../assets/Gifs/characters/scheming.gif",
+        gifurl: "../assets/mobile/characters/scheming.gif",
         effects: [{ name: "pitchShift", params: { shift: -0.3 } }]
     }];
 

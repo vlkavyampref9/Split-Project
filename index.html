@@ -5,46 +5,56 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+	<link rel="stylesheet" href="css/styleIndex.css" />
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 </head>
 
 <body class="style1">
-	<div class="style2">
+	<div style="height: 20vh; width: 100%; position: absolute; background-color: white; top: 0px;"></div>
+	<div class="style1 blueBackground">
 		<center>
-			<img src="assets/images/KoreHealth.png" alt="centered image" class="center style3" />
-			<h1 class="text">Welcome</h1>
+			<img src="assets/images/KoreHealth.png" alt="centered image" class="center logocenter" />
+			<h1 class="text" style="font-size: 35px; color: white;
+			padding-top: 20px;">WELCOME</h1>
 		</center>
-		<div id="basso" class="style6">
-			<a href="#vid_div" id="freccia" class="btn1">
-				<span id="bottom"></span>
-			</a>
-		</div>
+		<!--arrow buttons-->
+		<a href="#vid_div" class="smoothscroll">
+			<div class="arrows">
+				<svg class="littlearrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.73 33.46">
+			  		<g data-name="Layer 2">
+						<path fill="#231f20" stroke="#231f20" stroke-miterlimit="10" d="M65.53.59L33.37 32.75 1.21.59h10.32l21.59 21.58L54.78.5l10.75.09z" data-name="Layer 1"/>
+			  		</g>
+				</svg>
+				<svg class="bigarrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66.73 33.46">
+			  		<g data-name="Layer 2">
+						<path fill="#231f20" stroke="#231f20" stroke-miterlimit="10" d="M65.53.59L33.37 32.75 1.21.59h10.32l21.59 21.58L54.78.5l10.75.09z" data-name="Layer 1"/>
+			  		</g>
+				</svg>
+		  	</div>
+		</a>
 	</div>
-	<div class="video-container" id="vid_div">
-		<video autoplay src="assets/videos/Innerparts%200.1.mp4" preload="auto" muted class="style5"></video>
+	<div class="video-container blueBackground" id="vid_div">
+		<div class="card-image-container">
+			<video autoplay src="assets/videos/Innerparts%200.1.mp4" preload="auto" muted class="style5"></video>
+			<div class="style5"></div>
+		</div>
 		<div id="sliding" class="start animate__animated animate__slideInUp">
 			<p class="style8 animated bounce">
-				Express you inner voices.
-				Transform the way you feel.
+				<b>Freely Express</b> you Inner Voices.
+				<b>Transform</b> the way you feel.
 			</p>
-			<p class="style7">LET'S GET STARTED</p>
-			<div id="basso1" class="style6">
-				<a href="#" id="freccia1" onclick="SwitchViewToVoiceRoom()">
-					<span id="bottom1"></span>
-				</a>
+			<div class="letsBtn center">
+				<a href="#vid_div" class="style7 center" onclick="SwitchViewToVoiceRoom()">Let's get STARTED</a>
 			</div>
 		</div>
 
 	</div>
 	<footer id="page-footer" class="style22">
-		<div class="container"> <span class="text-muted">Copyright www.split.com</span> </div>
+		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
 		<div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
 	</footer>
 	<!-- Optional JavaScript -->
@@ -52,6 +62,7 @@
 	<script src="../bootstrap/4/js/popper.min.js"></script>
 	<script src="../bootstrap/4/js/bootstrap.min.js"></script>
 	<script src="js/app.js" type="text/javascript"></script>
+	
 </body>
 
 </html>

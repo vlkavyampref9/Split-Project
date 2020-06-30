@@ -8,12 +8,12 @@ var globalTransformedVoiceBlob = undefined;
 
 function InitRoomAmbience2(selectedCharacter) {
   document.getElementById("MyVoiceCharacter").src = selectedCharacter;
-  var charName = document.getElementById('charName');
-  charName.innerHTML = localStorage.getItem("SelectedCharacter");
-  charName.style = "transform:translateY(-70vh);transition-duration: 5s;transition-delay: 2s;color:green;font-size:20px;left:35vw";
-  document.getElementById("MyVoiceCharacter").style = "width:85vw;height:50vh;transition-duration: 5s;transition-delay: 2s;transform:translate(-30vw, -30vh);visibility:visible;"
-  document.getElementById("PlayButton").style = "transition-delay: 7s;font-size:18px; transition-duration:2s; bottom: 30vh;"
-  document.getElementById("audio").style = "transition-delay:8s;transition-duration:1s;bottom: 10vh; visibility: visible;left: 10vw;"
+  var nameDiv = document.getElementById('nameDiv');
+  document.getElementById('charName').innerHTML = "I am "+localStorage.getItem("SelectedCharacter");
+  nameDiv.style = "transform:translateY(-75vh);transition-duration: 3s;transition-delay: 1s;";
+  document.getElementById("MyVoiceCharacter").style = "width:100vw;height:50vh;transition-duration: 3s;transition-delay: 1s;transform:translate(-37vw, -25vh);visibility:visible;"
+  document.getElementById("PlayButton").style = "transition-delay: 5s;font-size:18px; transition-duration:2s; bottom: 20vh;"
+  document.getElementById("audio").style = "transition-delay:6s;transition-duration:1s;bottom: 8vh; visibility: visible;left: 50%; margin-left: -150px;"
   au.controls = true;
   au.src = null;
   au.title = "yourvoices";
@@ -29,78 +29,78 @@ function playVoicesInLoop() {
     currentrecording = 1;
   }
   var localname = "record" + currentrecording.toString();
-  transformRecordingFromDataBase("RecordingsStore", "recordingName", localname);  
-  document.getElementById("PlayButton").disabled = true;    
+  transformRecordingFromDataBase("RecordingsStore", "recordingName", localname);
+  document.getElementById("PlayButton").disabled = true;
 }
 
-function PlayNextOrLoop(){
-  document.getElementById("PlayButton").disabled = false;   
+function PlayNextOrLoop() {
+  document.getElementById("PlayButton").disabled = false;
 }
 
 // function to transform the voice to a different character based on parameter passed from HTML
 async function transformVoice(blob, transformEffects) {
   let arrayBuffer = await blob.arrayBuffer();
   let ctx = new AudioContext();
-  var outputAudioBuffer = await ctx.decodeAudioData(arrayBuffer); 
+  var outputAudioBuffer = await ctx.decodeAudioData(arrayBuffer);
   var iter;
-  for(iter = 0; iter < transformEffects.length; iter++){
-   outputAudioBuffer = await window[transformEffects[iter].name+"Transformer"](outputAudioBuffer, transformEffects[iter].params);    
-  }   
-  let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer); 
-  globalTransformedVoiceBlob = outputWavBlob; 
-  au.src = URL.createObjectURL(outputWavBlob);   
-  au.play();  
-} 
-  
+  for (iter = 0; iter < transformEffects.length; iter++) {
+    outputAudioBuffer = await window[transformEffects[iter].name + "Transformer"](outputAudioBuffer, transformEffects[iter].params);
+  }
+  let outputWavBlob = await audioBufferToWaveBlob(outputAudioBuffer);
+  globalTransformedVoiceBlob = outputWavBlob;
+  au.src = URL.createObjectURL(outputWavBlob);
+  au.play();
+}
 
-function transformRecordingFromDataBase(StoreName, IndexName, RecordingName) { 
+
+function transformRecordingFromDataBase(StoreName, IndexName, RecordingName) {
   window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
-  if(!window.indexedDB){
-      alert("storage is unavailable");
+  if (!window.indexedDB) {
+    alert("storage is unavailable");
   }
 
   let request = window.indexedDB.open("RecordingsDataBase", 1),
-  db,
-  tx,
-  store,
-  index;
+    db,
+    tx,
+    store,
+    index;
 
-  request.onerror = function(e){
-      console.log("There was an error: " + e.target.errorCode);
-      };
+  request.onerror = function (e) {
+    console.log("There was an error: " + e.target.errorCode);
+  };
 
   //used to get data or assign data to the database
-  request.onsuccess = function(e){
-      db = request.result;
-      tx = db.transaction(StoreName, "readwrite");
-      store = tx.objectStore(StoreName);
-      index = store.index(IndexName);
+  request.onsuccess = function (e) {
+    db = request.result;
+    tx = db.transaction(StoreName, "readwrite");
+    store = tx.objectStore(StoreName);
+    index = store.index(IndexName);
 
-      db.onerror = function(e){
-          console.log("ERROR" + e.target.errorCode);               
-      }
+    db.onerror = function (e) {
+      console.log("ERROR" + e.target.errorCode);
+    }
 
-      let value = index.get(RecordingName);        
-      value.onsuccess = function(){ 
-          console.log("DB fetch success");   
-          globalOriginalVoiceBlob = value.result.recordingBlob;         
-          transformVoice(value.result.recordingBlob, JSON.parse(localStorage.getItem("SelectedCharacterEffects")));                                      
-      };
+    let value = index.get(RecordingName);
+    value.onsuccess = function () {
+      console.log("DB fetch success");
+      globalOriginalVoiceBlob = value.result.recordingBlob;
+      transformVoice(value.result.recordingBlob, JSON.parse(localStorage.getItem("SelectedCharacterEffects")));
+    };
 
-      tx.oncomplete = function(){            
-          db.close();
-      };
-      //set or retrieve data here.
-      //onsuccess handlers for data set or retrieve.        
+    tx.oncomplete = function () {
+      db.close();
+    };
+    //set or retrieve data here.
+    //onsuccess handlers for data set or retrieve.        
   };
 
 };
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  au = document.getElementById("VoiceCharacterAudio");  
-   InitRoomAmbience2(localStorage.getItem("SelectedCharacterGif"));
-   }); 
+  au = document.getElementById("VoiceCharacterAudio");
+  InitRoomAmbience2(localStorage.getItem("SelectedCharacterGif"));
+});
 
 
-  
+
 
