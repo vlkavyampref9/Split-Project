@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="style1">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--<script src="../dmxAppConnect/dmxAppConnect.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/styleFaceVoice.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <script src="../dmxAppConnect/dmxMediumEditor/medium-editor.js" defer=""></script>
+  <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    
+	
+	<!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+</head>
+
+<body class="blueRoom">
+  <div id="nameDiv" class="nameDiv">
+    <p id="charName" class="charName">I am Cry Baby</p>
+  </div>
+  <!-- Swiper -->
+  <div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" id="gifBig" style="background-image:url(../assets/mobile/characters/cryBaby.gif)"></div>
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/DramaQueen.gif)"></div>
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/BossyBoss.gif)"></div>
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/coolGirl.gif)"></div>
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/saint.gif)"></div>
+    </div>
+    
+  </div>
+  <div>
+    <button id="PlayButton" class="listen" onclick="playVoicesInLoop()">Hear ME Speak</button>
+    <div id="audio" class="audioBox">
+      <audio id="VoiceCharacterAudio" onended="PlayNextOrLoop()" onclick="PlayTransform()"></audio>
+    </div>
+  </div>
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/100*100/cryBaby100*100.gif)" onclick="switchViewToFaceVoice('Cry Baby')"></div>
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/100*100/dramaQueen100*100.gif)" onclick="switchViewToFaceVoice('Drama Queen')"></div>
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/100*100/bossyBoss100*100.gif)" onclick="switchViewToFaceVoice('Control Freak')"></div>
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/100*100/chillPill100*100.gif)" onclick="switchViewToFaceVoice('Chill Pill')"></div>
+      <div class="swiper-slide" style="background-image:url(../assets/mobile/100*100/saint100*100.gif)" onclick="switchViewToFaceVoice('The Saint')"></div>
+    </div>
+  </div>
+  <div class="backBtn">
+    <button style="border-radius: 10px; border-style: hidden;" onclick="backVoiceRoom()">Go Back To Voice Room</button>
+  </div>
+  <footer id="page-footer" class="bg-dark style22">
+		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
+		<div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
+	</footer>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 20,
+      slidesPerView: 3.5,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+  </script>
+  <script src="../bootstrap/4/js/popper.min.js"></script>
+	<script src="../bootstrap/4/js/bootstrap.min.js"></script>
+	<script src="../js/app.js"></script>
+
+	<script src="../js/helpers/dragula.min.js"></script>
+	<script src="../js/helpers/helpers.js"></script>
+	<script src="../js/helpers/jungle.js"></script>
+	<script src="../js/helpers/tuna.min.js"></script>
+	<script src="../js/helpers/vocoder.js"></script>
+
+	<script src="../js/transformers/delayTransformer.js"></script>
+	<script src="../js/transformers/speedTransformer.js"></script>
+	<script src="../js/transformers/pitchShiftTransformer.js"></script>
+	<script src="../js/faceyourvoice.js"></script>
+</body>
+
+</html>
