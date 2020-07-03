@@ -161,7 +161,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#225462', end
     left: 1vw;
     top: 5vh;
     z-index: 50;
-	background: url("../assets/Gifs/RECORD\ GIF\ [WHITE].gif") repeat;
+	background: url("../assets/Gifs/recordGif.gif") repeat;
 	opacity: 1;
 	background-size: cover;
 }
