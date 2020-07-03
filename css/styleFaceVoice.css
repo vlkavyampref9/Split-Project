@@ -1,0 +1,110 @@
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.gallery-top {
+  height: 60%;
+  width: 100%;
+  background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-color: #0f0f0f;
+	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: white;
+	box-shadow: 0px 5px 7px;
+}
+
+.gallery-thumbs {
+  height: 15%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  margin-top: 30px;
+}
+
+.gallery-thumbs .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.listen {
+	background-color: black;
+	box-shadow: 2px 2px; 
+	border-radius: 15px;
+	font-size: 23px;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	position: absolute;
+	top: 60%;
+	text-align: center;
+	left: 10vw;
+	width: 80vw;
+	z-index:100;
+}
+
+.audioBox {
+	display: none;
+	position: absolute;
+	top: 60%;
+	text-align: center;
+	left: 10%;
+	width: 80%;
+	z-index:100;
+}
+@media (max-width: 340px) {
+	.audioBox{
+		width: 100vw;
+		left:0%;
+		right:0vw;
+	}
+  }
+
+.nameDiv {
+	position: relative;
+	z-index: 20;
+	top: 10px;
+	width: 100%;
+	display: block;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+}
+
+.backBtn{
+	width: 100%;
+	height: 10%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+	text-align: center;
+	margin-top: 15px;
+	padding-bottom: 15px;
+}
