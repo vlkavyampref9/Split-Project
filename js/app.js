@@ -1,8 +1,13 @@
 var globalAudioBlob = undefined;
 
+function SwitchToOption() {
+    localStorage.clear();
+    window.location.href = 'views/options.html';
+}
+
 function SwitchViewToVoiceRoom() {
     localStorage.clear();
-    window.location.href = 'views/roomselection.html';
+    window.location.href = 'roomselection.html';
 }
 
 //Storing data to indexedDB with structure

@@ -27,18 +27,12 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-/*var ThemesList = [{ theme: "joker", video: "../assets/videos/jokerthemevideo.mp4" },
-{ theme: "clouds", video: "../assets/videos/cloudsthemevideo.mp4" },
-{ theme: "greenspace", video: "../assets/videos/greenthemevideo.mp4" },
-{ theme: "lighttunnel", video: "../../assets/videos/lighttunnelthemevideo.mp4" }, //different flow
-{ theme: "watchingwaves", video: "../assets/videos/watchingwavesthemevideo.mp4" }];
-*/
-var ThemesList = [{ theme: "joker", video: "../assets/mobile/videos/jokertheme.mp4" },
-{ theme: "clouds", video: "../assets/mobile/videos/cloudsthemevideo.mp4" },
-{ theme: "greenspace", video: "../assets/mobile/videos/greenthemevideo.mp4" },
-{ theme: "lighttunnel", video: "../../assets/videos/lighttunnelthemevideo.mp4" }, //different flow
-{ theme: "cave", image:  "../assets/mobile/cave-1.jpg" }, 
-{ theme: "watchingwaves", video: "../assets/mobile/videos/wavesvideo.mp4" }];
+var ThemesList = [{ theme: "joker", video: "../assets/mobile/videos/jokertheme.mp4" , outHead: "blah"},
+{ theme: "clouds", video: "../assets/mobile/videos/cloudsthemevideo.mp4" , outHead: "Let out \nyour critical\n inner voices"},
+{ theme: "greenspace", video: "../assets/mobile/videos/greenthemevideo.mp4", outHead: "Be a friend\n to yourself"},
+{ theme: "lighttunnel", video: "../../assets/videos/lighttunnelthemevideo.mp4" , outHead: "blah"}, //different flow
+{ theme: "cave", image:  "../assets/mobile/cave-1.jpg" , outHead: "Confront the\n enemy within"}, 
+{ theme: "watchingwaves", video: "../assets/mobile/videos/wavesvideo.mp4" , outHead: "Let out the\n frustrations \ninside you"}];
 
 function focusToVoiceRoom() {
     var voiceroomscene = document.getElementById("VoiceRoom");
@@ -47,6 +41,8 @@ function focusToVoiceRoom() {
 
 function SwitchViewToAmbienceRoom(theme) {
     localStorage.setItem("SelectedTheme", theme);
+    let outhead = ThemesList.find(obj => obj.theme === theme).outHead;
+    localStorage.setItem("OutHead", outhead);
     let videourl = ThemesList.find(obj => obj.theme === theme).video;
     localStorage.setItem("SelectedThemeVideo", videourl);
     window.location.href = 'voiceroomview.html';
@@ -54,6 +50,8 @@ function SwitchViewToAmbienceRoom(theme) {
 
 function SwitchViewToAnimatedRoom(theme) {
     localStorage.setItem("SelectedTheme", theme);
+    let outhead = ThemesList.find(obj => obj.theme === theme).outHead;
+    localStorage.setItem("OutHead", outhead);
     let imgurl = ThemesList.find(obj => obj.theme === theme).image;
     localStorage.setItem("SelectedThemeImg", imgurl);
     window.location.href = 'animatedrooms.html';

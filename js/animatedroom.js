@@ -8,6 +8,7 @@ function closeDiv() {
  
  function InitRoomAnimated(themeimgurl) {
     var letout = document.getElementById('letout');
+    letout.innerHTML = localStorage.getItem("OutHead");
     letout.style = "transform:translateY(-50vh);transition-duration: 3s;transition-delay: 1s;color:rgb(218,218,218);font-size:40px;left:17vw;";
     var imgelement = document.getElementById("animatedroomimg");
     imgelement.src = themeimgurl;
