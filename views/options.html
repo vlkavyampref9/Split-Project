@@ -6,22 +6,175 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/style.css" />
-	<link rel="stylesheet" href="../css/styleIndex.css" />
+    <link rel="stylesheet" href="../css/styleIndex.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <script>
+        var elements = ['#o1', '#o2', '#o3', '#o4', '#o5', '#o6'];
+        $(document).ready(function(){
+            $(o1).click(function(){
+                var result = false;
+                $(o1).toggleClass("toggled");
+                jQuery.each(elements, function(i, v){
+                //set result false if element don't have class
+                    if(jQuery(v).hasClass("toggled"))
+                        result = true;
+                });
+                (result == true)? activate() : deactivate();
+            });
+        });
+        $(document).ready(function(){
+            $(o2).click(function(){
+                var result = false;
+                $(o2).toggleClass("toggled");
+                jQuery.each(elements, function(i, v){
+                //set result false if element don't have class
+                    if(jQuery(v).hasClass("toggled"))
+                        result = true;
+                });
+                (result == true)? activate() : deactivate();
+            });
+        });
+        $(document).ready(function(){
+            $(o3).click(function(){
+                var result = false;
+                $(o3).toggleClass("toggled");
+                jQuery.each(elements, function(i, v){
+                //set result false if element don't have class
+                    if(jQuery(v).hasClass("toggled"))
+                        result = true;
+                });
+                (result == true)? activate() : deactivate();
+            });
+        });
+        $(document).ready(function(){
+            $(o4).click(function(){
+                var result = false;
+                $(o4).toggleClass("toggled");
+                jQuery.each(elements, function(i, v){
+                //set result false if element don't have class
+                    if(jQuery(v).hasClass("toggled"))
+                        result = true;
+                });
+                (result == true)? activate() : deactivate();
+            });
+        });
+        $(document).ready(function(){
+            $(o5).click(function(){
+                var result = false;
+                $(o5).toggleClass("toggled");
+                jQuery.each(elements, function(i, v){
+                //set result false if element don't have class
+                    if(jQuery(v).hasClass("toggled"))
+                        result = true;
+                });
+                (result == true)? activate() : deactivate();
+            });
+        });
+        $(document).ready(function(){
+            $(o6).click(function(){
+                var result = false;
+                $(o6).toggleClass("toggled");
+                jQuery.each(elements, function(i, v){
+                //set result false if element don't have class
+                    if(jQuery(v).hasClass("toggled"))
+                        result = true;
+                });
+                (result == true)? activate() : deactivate();
+            });
+        });
+        
+
+    </script>
 </head>
 
 <body class="style1">
 	<div class="style1 blueBackground">
-		<p class="text">I want to<br>talk to</p>
-		<div class="progress" style="width: 80%; height: 5px; margin-left: 30px; position: relative; top: 55%;">
-			<div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+		<p class="text">I want to<br>talk to...</p>
+		<!--1st row verticaly centered text in the square columns-->
+<a href="#" style="cursor: pointer;">
+<div id="o1" class="square" style="border-color: #adffe5; border-width: 3px; border-style: solid; box-shadow: 2px 2px #b8f6e3;">
+    <div class="content">
+        <div class="table">
+            <div class="table-cell">
+                <p class="txtSty">Vent out</p>
+            </div>
         </div>
-        <center>
-		<div class="letsBtn center" style="top:340px;">
-			<a href="#" class="style7 center" onclick="SwitchViewToVoiceRoom()">Next</a>
+    </div>
+</div>
+</a>
+<a href="#" style="cursor: pointer;">
+<div id="o2" class="square" style="border-color: #adffe5; border-width: 3px; border-style: solid; box-shadow: 2px 2px #b8f6e3;">
+    <div class="content">
+        <div class="table">
+            <div class="table-cell">
+				<p class="txtSty">Assert Positivity</p>
+            </div>
         </div>
-    </center>
+    </div>
+</div>
+</a>
+
+<!-- 2nd row verticaly centered images in square columns -->
+<a href="#" style="cursor: pointer;">
+<div id="o3" class="square" style="border-color: #ffeeab; border-width: 3px; border-style: solid; box-shadow: 2px 2px #f1e4ad;">
+   <div class="content">
+        <div class="table">
+            <div class="table-cell">
+                <p class="txtSty">Confront fear</p>
+            </div>
+        </div>
+    </div>
+</div>
+</a>
+<a href="#" style="cursor: pointer;">
+<div id="o4" class="square" style="border-color: #ffeeab; border-width: 3px; border-style: solid; box-shadow: 2px 2px #f1e4ad;">
+    <div class="content">
+        <div class="table">
+            <div class="table-cell">
+               <p class="txtSty">Disconnect negativity</p>
+            </div>
+        </div>
+    </div>
+</div>
+</a>
+
+
+<!-- 3rd row responsive images in background with centered content -->
+<a href="#" style="cursor: pointer;">
+<div id="o5" class="square" style="border-color: #90c8e8; border-width: 3px; border-style: solid; box-shadow: 2px 2px #9dcce7;">
+   <div class="content">
+        <div class="table">
+            <div class="table-cell">
+                <p class="txtSty">Visualize Goals</p>
+            </div>
+        </div>
+    </div>
+</div>
+</a>
+<a href="#" style="cursor: pointer;">
+<div id="o6" class="square" style="border-color: #90c8e8; border-width: 3px; border-style: solid; box-shadow: 2px 2px #9dcce7;">
+    <div class="content">
+        <div class="table">
+            <div class="table-cell">
+                <p class="txtSty">Focus deeply</p>
+            </div>
+        </div>
+    </div>
+</div>
+</a>
+
+		<center>
+			<div class="progress" style="width: 80%; height: 5px; position: absolute; bottom:10%; left:10%;">
+				<div id="bar" class="progress-bar" role="progressbar" style="width: 66%; background-color: rgb(182, 182, 182) !important" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <!--#2d71cf-->
+        
+			<div id="btnNext" class="letsBtn center" style="bottom: 5%; left:32%; background-color: rgb(182, 182, 182);">
+				<a href="#" id="nextB" class="style7 center">Next</a>
+        	</div>
+    	</center>
 	</div>
 	<footer id="page-footer" class="style22">
 		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
