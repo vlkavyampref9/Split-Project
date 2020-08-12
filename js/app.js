@@ -1,8 +1,24 @@
 var globalAudioBlob = undefined;
 
+function SwitchToOption() {
+    localStorage.clear();
+    window.location.href = 'views/options.html';
+}
+
 function SwitchViewToVoiceRoom() {
     localStorage.clear();
-    window.location.href = 'views/roomselection.html';
+    window.location.href = 'roomselection.html';
+}
+
+function activate(){
+    document.getElementById("bar").style.backgroundColor="#2d71cf";
+    document.getElementById("btnNext").style.backgroundColor="#2d71cf";
+    document.getElementById("nextB").onclick = function() {SwitchViewToVoiceRoom()};
+}
+function deactivate(){
+    document.getElementById("bar").style.backgroundColor="rgb(182, 182, 182)";
+    document.getElementById("btnNext").style.backgroundColor="rgb(182, 182, 182)";
+    document.getElementById("nextB").onclick = null;
 }
 
 //Storing data to indexedDB with structure

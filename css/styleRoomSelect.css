@@ -49,34 +49,22 @@ div.scrollmenu a:hover {
   top: 70vh;
   font-family: 'Roboto', sans-serif;
 }
-
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  -webkit-transition: background-color 0.6s ease;
-  transition: background-color 0.6s ease;
+.s1 {
+  height: 15%;
+  border-radius: 25px;
+  box-shadow: 3px 3px rgb(190, 190, 190);
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.txtSty1 {
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	color: white;
+  text-align: center;
+  font-style: bold;
+  margin-top: 7%;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 .style12 {
 	min-height: 300px;
     max-height: 600px;
@@ -94,19 +82,4 @@ div.scrollmenu a:hover {
   margin-top: 7px;
 }
 
-#joker {
-    background-image: url(../assets/mobile/jokerRant.gif);
-}
-#clouds {
-    background-image: url(../assets/mobile/risingAbove.gif);
-}
-#greenspaces {
-    background-image: url(../assets/mobile/greentheme.gif);
-}
-#waves {
-    background-image: url(../assets/mobile/watchingWaves.gif);
-}
-#cave {
-  background-image: url(../assets/mobile/moveForward.gif);
-}
 
