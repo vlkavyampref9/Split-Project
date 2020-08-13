@@ -7,7 +7,7 @@ function SwitchToOption() {
 
 function SwitchViewToVoiceRoom() {
     localStorage.clear();
-    window.location.href = 'roomselection.html';
+    window.location.href = 'login.html';
 }
 
 function activate(){
