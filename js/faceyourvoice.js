@@ -81,7 +81,7 @@ InitRoomAmbience2(localStorage.getItem("SelectedCharacterGif"));
 }
 
 function InitRoomAmbience2(selectedCharacter) {
-  document.getElementById('charName').innerHTML = "I am "+localStorage.getItem("SelectedCharacter");
+  document.getElementById('charName').innerHTML = localStorage.getItem("SelectedCharacter")+ " says";
   document.getElementById('gifBig').style.backgroundImage = selectedCharacter;
   au.controls = true;
   //au.stop();
