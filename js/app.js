@@ -1,4 +1,13 @@
 var globalAudioBlob = undefined;
+/*var mainApp = {};
+(function(){
+    var firebase = app_fireBase;
+    var user = firebase.auth().currentUser;
+    if (user){
+        window.location.replace("views/roomselection.html");
+        console.log('hi');
+    }
+})()*/
 
 function SwitchToOption() {
     localStorage.clear();

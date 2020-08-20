@@ -2,10 +2,13 @@ var mainApp = {};
 (function(){
     var firebase = app_fireBase;
     var uid = null;
+    var name;
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
             uid = user.id;
+            name = user.displayName;
+            writeName(name);
         }
         else{
             uid = null;
@@ -15,9 +18,12 @@ var mainApp = {};
     function logOut(){
         firebase.auth().signOut();
     }
-
-    mainApp.logOut = logOut;
+    function writeName(){
+        document.getElementById("name").innerHTML = name;
+    }
     
+    mainApp.logOut = logOut;
+    mainApp.name = writeName;
 })()
 
 var ThemesList = [{ theme: "joker", video: "../assets/mobile/videos/jokertheme.mp4" , outHead: "blah"},
