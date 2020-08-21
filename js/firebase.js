@@ -14,5 +14,23 @@ var app_fireBase = {};
   firebase.initializeApp(firebaseConfig);
 
   app_fireBase = firebase;
+  var uid = null;
+  var name;
+  firebase.auth().onAuthStateChanged(function(user) {
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+        if (user) {
+            // User is signed in.
+            if(window.location.pathname=="/" || window.location.pathname=="/index.html" || window.location.pathname=="/views/options.html"){
+              window.location.replace("/views/roomselection.html");
+            }
+            console.log(window.location.pathname);
+            uid = user.id;
+        }
+        else{
+            uid = null;
+            //window.location.replace("../index.html");
+        }
+    });
+  
   
 })()
