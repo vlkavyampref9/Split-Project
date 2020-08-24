@@ -1,3 +1,31 @@
+var mainApp = {};
+(function(){
+    var firebase = app_fireBase;
+    var uid = null;
+    var name;
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in.
+            uid = user.id;
+            name = user.displayName;
+            writeName(name);
+        }
+        else{
+            uid = null;
+            window.location.replace("../index.html");
+        }
+    });
+    function logOut(){
+        firebase.auth().signOut();
+    }
+    function writeName(){
+        document.getElementById("name").innerHTML = name;
+    }
+    
+    mainApp.logOut = logOut;
+    mainApp.name = writeName;
+})()
+
 var ThemesList = [{ theme: "joker", video: "../assets/mobile/videos/jokertheme.mp4" , outHead: "blah"},
 { theme: "clouds", video: "../assets/mobile/videos/cloudsthemevideo.mp4" , outHead: "Let out <br>your critical <br>inner voices"},
 { theme: "greenspace", video: "../assets/mobile/videos/greenthemevideo.mp4", outHead: "Be a friend <br>to yourself"},
