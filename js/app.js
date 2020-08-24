@@ -10,6 +10,10 @@ function SwitchViewToVoiceRoom() {
     window.location.href = 'login.html';
 }
 
+function SwitchViewToSelect() {
+    window.location.href = 'roomselection.html';
+}
+
 function activate(){
     document.getElementById("bar").style.backgroundColor="#2d71cf";
     document.getElementById("btnNext").style.backgroundColor="#2d71cf";

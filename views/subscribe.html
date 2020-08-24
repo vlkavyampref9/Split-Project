@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="style1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/styleIndex.css" />
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-messaging.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    
+</head>
+<body class="style1">
+    <div class="style1 blueBackground">
+    <p class="text">Get the full self-talk effect</p>
+    <p class="text1">Talking to yourself can be a great way to start the day with focus and end the day with clarity. You can always edit or turn them off later. Try it out.</p>
+    <!--<p id="token" style="color: aliceblue; margin-top: 20px;"></p>-->
+    <div style="background-color: white; width: 30%; position: absolute; right: 38%; top: 80%; opacity: 5px; border-radius: 5px; height: 5%; text-align: center; box-shadow: 3px 3px rgb(190, 190, 190); font-size: 16px;" onClick="mess.InitializeFirebaseMessaging(),SwitchViewToSelect()">Subscribe</div>
+    <div style="background-color: white; width: 20%; position: absolute; right: 44%; top: 90%; opacity: 5px; border-radius: 5px; height: 5%; text-align: center; box-shadow: 3px 3px rgb(190, 190, 190); font-size: 16px;" onClick="SwitchViewToSelect()">Not now</div>
+
+    </div>
+    <footer id="page-footer" class="bg-dark style22">
+		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
+		<div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
+	</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="../js/firebase.js"></script>
+    <script src="../js/app.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 var app_fireBase = {};
+var mess = {};
 (function(){
   var firebaseConfig = {
     apiKey: "AIzaSyAvRJzn26zU_2wzkC_8Q_mYCb1RoEzPHaE",
@@ -15,7 +16,6 @@ var app_fireBase = {};
 
   app_fireBase = firebase;
   var uid = null;
-  var name;
   firebase.auth().onAuthStateChanged(function(user) {
         firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
         if (user) {
@@ -31,6 +31,54 @@ var app_fireBase = {};
             //window.location.replace("../index.html");
         }
     });
-  
+
+  const messaging = firebase.messaging();
+
+  messaging.usePublicVapidKey("BPQTBgJy7Oy07AjsrzTY9wfQso1rd0abkyyHd3iZXyMsg2MdZT7rH0xmKNlc6poRQ8UkCXWiSYo4Dl7cJCo_-y8");
+
+  function InitializeFirebaseMessaging() {
+    messaging
+      .requestPermission()
+      .then(function ()  {
+        console.log("Notification Permission")
+        return messaging.getToken();
+      })
+      .then(function (token) {
+        console.log("Token : "+token);
+        //document.getElementById("token").innerHTML=token;
+      })
+      .catch(function (reason) {
+        console.log(reason);
+      });
+  }
+
+  messaging.onMessage(function (payload) {
+    console.log(payload);
+    const notificationOption={
+      body:payload.notification.body,
+      icon:payload.notification.icon
+    };
+
+    if(Notification.permission==="granted"){
+      var notification=new Notification(payload.notification.title,notificationOption);
+
+      notification.onclick=function (ev) {
+          ev.preventDefault();
+          window.open(payload.notification.click_action,'_blank');
+          notification.close();
+      }
+    }
+  });
+  messaging.onTokenRefresh(function () {
+    messaging.getToken()
+      .then(function (newtoken) {
+        console.log("New Token : "+newtoken);
+      })
+      .catch(function (reason) {
+        console.log(reason);
+      })
+  })
+  mess.InitializeFirebaseMessaging = InitializeFirebaseMessaging;
+  //InitializeFirebaseMessaging();
   
 })()
