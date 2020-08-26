@@ -26,12 +26,12 @@ var mainApp = {};
     mainApp.name = writeName;
 })()
 
-var ThemesList = [{ theme: "joker", video: "../assets/mobile/videos/jokertheme.mp4" , outHead: "blah"},
-{ theme: "clouds", video: "../assets/mobile/videos/cloudsthemevideo.mp4" , outHead: "Let out <br>your critical <br>inner voices"},
-{ theme: "greenspace", video: "../assets/mobile/videos/greenthemevideo.mp4", outHead: "Be a friend <br>to yourself"},
-{ theme: "lighttunnel", video: "../../assets/videos/lighttunnelthemevideo.mp4" , outHead: "blah"}, //different flow
-{ theme: "cave", image:  "../assets/mobile/cave-1.jpg" , outHead: "Confront the <br>enemy within"}, 
-{ theme: "watchingwaves", video: "../assets/mobile/videos/wavesvideo.mp4" , outHead: "Let out the <br>frustrations <br>inside you"}];
+var ThemesList = [
+{ theme: "assertpositivity", video: "../assets/mobile/videos/AssertPositivityVid.mp4", outHead: "Be a friend <br>to yourself"},
+{ theme: "ventout", video: "../assets/mobile/videos/VentoutVidRe.mp4", outHead: "Let out the <br>frustrations <br>inside you"},
+{ theme: "disconnectnegativity", video: "../assets/mobile/videos/NegativityVidRe.mp4", outHead: "Let out <br>your critical <br>inner voices"},
+{ theme: "confrontfear", video: "../assets/mobile/videos/FearVidRe.mp4", outHead: "Confront the <br>enemy within"}
+];
 
 function focusToVoiceRoom() {
     var voiceroomscene = document.getElementById("VoiceRoom");
@@ -47,14 +47,14 @@ function SwitchViewToAmbienceRoom(theme) {
     window.location.href = 'voiceroomview.html';
 }
 
-function SwitchViewToAnimatedRoom(theme) {
+/*function SwitchViewToAnimatedRoom(theme) {
     localStorage.setItem("SelectedTheme", theme);
     let outhead = ThemesList.find(obj => obj.theme === theme).outHead;
     localStorage.setItem("OutHead", outhead);
     let imgurl = ThemesList.find(obj => obj.theme === theme).image;
     localStorage.setItem("SelectedThemeImg", imgurl);
     window.location.href = 'animatedrooms.html';
-}
+}*/
 
 
 
