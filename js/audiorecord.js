@@ -184,13 +184,26 @@ function createDownloadLink(blob) {
 		//storeBlobToLocalStorage(blob, url, localStorageName);
 		//transformVoice(blob, 1.9, localStorageName+"transform");
 		//add the li element to the ol
+		var room = localStorage.getItem("SelectedTheme");
 		document.getElementById("recordingsList").appendChild(li);
 		document.getElementById("load").style.display = "none";
 		document.getElementById("who").style.display = "block";
+		document.getElementById("CharacterAssignPageLoadTriggerButton").style.display = "block";
+		if(room == 'disconnectnegativity'){
+			document.getElementById("studioText").style.display = "block";
+		}
+		else{
+			document.getElementById("studioText").style.display = "none";
+		}
 		if(document.getElementById("recordingsList")!=null){
 			document.getElementById("CharacterAssignPageLoadTriggerButton").onclick = function () {
 				window.onbeforeunload = null;
-				window.location.href = 'closure.html';
+				if(room == 'disconnectnegativity'){
+					window.location.href = 'closure.html';
+				}
+				else{
+					window.location.href = 'finish.html';
+				}
 			};
 			window.onbeforeunload = function (e) {
 			var message = "Your recording will be deleted!";

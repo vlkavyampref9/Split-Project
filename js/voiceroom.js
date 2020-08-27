@@ -21,8 +21,9 @@ function InitRoomAmbience(themevideourl) {
 
 }
 var count = 0;
+var room = localStorage.getItem("SelectedTheme");
 function displayMsg() {
-   var room = localStorage.getItem("SelectedTheme");
+   
    var box = document.getElementById("msgBox");
    box.style.display = "block";
    count++;
@@ -112,10 +113,16 @@ function toggleMusic() {
    }
 }
 
-function switchViewToCharacterSelection() {
-   window.location.href = 'closure.html';
+/*function switchViewToCharacterSelection() {
+   //var room = localStorage.getItem("SelectedTheme");
+   if (room == 'disconnectnegativity'){
+      alert('finish');
+      window.location.href = "closure.html";
+   }
+   window.location.href = 'finish.html';
    window.onbeforeunload = null;
-}
+}*/
+
 window.addEventListener('DOMContentLoaded', (event) => {
    InitRoomAmbience(localStorage.getItem("SelectedThemeVideo"));
 });
