@@ -20,8 +20,8 @@ var app_fireBase = {};
         firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
         if (user) {
             // User is signed in.
-            if(window.location.pathname=="/konvostest/" || window.location.pathname=="/konvostest/index.html" || window.location.pathname=="/konvostest/views/options.html"){
-              window.location.replace("/konvostest/views/roomselection.html");
+            if(window.location.pathname=="/konvos/" || window.location.pathname=="/konvos/index.html" || window.location.pathname=="/konvos/views/options.html"){
+              window.location.replace("/konvos/views/roomselection.html");
             }
             console.log(window.location.pathname);
             uid = user.id;

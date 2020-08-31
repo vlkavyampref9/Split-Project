@@ -47,14 +47,6 @@ function SwitchViewToAmbienceRoom(theme) {
     window.location.href = 'voiceroomview.html';
 }
 
-/*function SwitchViewToAnimatedRoom(theme) {
-    localStorage.setItem("SelectedTheme", theme);
-    let outhead = ThemesList.find(obj => obj.theme === theme).outHead;
-    localStorage.setItem("OutHead", outhead);
-    let imgurl = ThemesList.find(obj => obj.theme === theme).image;
-    localStorage.setItem("SelectedThemeImg", imgurl);
-    window.location.href = 'animatedrooms.html';
-}*/
 
 
 

@@ -113,16 +113,6 @@ function toggleMusic() {
    }
 }
 
-/*function switchViewToCharacterSelection() {
-   //var room = localStorage.getItem("SelectedTheme");
-   if (room == 'disconnectnegativity'){
-      alert('finish');
-      window.location.href = "closure.html";
-   }
-   window.location.href = 'finish.html';
-   window.onbeforeunload = null;
-}*/
-
 window.addEventListener('DOMContentLoaded', (event) => {
    InitRoomAmbience(localStorage.getItem("SelectedThemeVideo"));
 });
