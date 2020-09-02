@@ -20,42 +20,51 @@
 </head>
 
 <body class="blueRoom">
-  <div id="nameDiv" class="nameDiv">
-    <p id="charName" class="charName">Distance the voice</p>
-  </div>
-  <!-- Swiper -->
-  <div class="swiper-container gallery-top">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" id="gifBig" style="background-image:url(../assets/mobile/characters/cryBaby.gif)"></div>
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/DramaQueen.gif)"></div>
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/BossyBoss.gif)"></div>
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/coolGirl.gif)"></div>
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/saint.gif)"></div>
+  
+    <div id="nameDiv" class="nameDiv">
+      <p id="charName" class="charName">Distance the voice</p>
     </div>
-    
-  </div>
-  <div>
-    <button id="PlayButton" class="listen" onclick="playVoicesInLoop()">Listen</button>
-    <div id="audio" class="audioBox">
-      <audio id="VoiceCharacterAudio" onended="PlayNextOrLoop()" onclick="PlayTransform()"></audio>
+    <!-- Swiper -->
+    <div class="swiper-container gallery-top">
+      <div id="DisconnectNegativityCharsBigGif" class="swiper-wrapper" style="visibility:hidden;">
+        <div class="swiper-slide" id="gifBig" style="background-image:url(../assets/mobile/characters/cryBaby.gif)"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/DramaQueen.gif)"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/BossyBoss.gif)"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/coolGirl.gif)"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/saint.gif)"></div>
+      </div>
+      <div id = "PitchIdeaCharsBigGif" class="swiper-wrapper" style="visibility:hidden;">      
+        <div class="swiper-slide" id="gifBig" style="background-image:url(../assets/mobile/characters/coolGirl.gif)"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/characters/saint.gif)"></div>
+      </div>    
     </div>
-  </div>
-  <div class="swiper-container gallery-thumbs">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/cryBaby.gif)" onclick="switchViewToFaceVoice('Cry Baby')"></div>
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/dramaQueen.gif)" onclick="switchViewToFaceVoice('Drama Queen')"></div>
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/bossyBoss.gif)" onclick="switchViewToFaceVoice('Control Freak')"></div>
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/chillPill.gif)" onclick="switchViewToFaceVoice('Chill Pill')"></div>
-      <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/saint.gif)" onclick="switchViewToFaceVoice('The Saint')"></div>
+    <div>
+      <button id="PlayButton" class="listen" onclick="playVoicesInLoop()">Listen</button>
+      <div id="audio" class="audioBox">
+        <audio id="VoiceCharacterAudio" onended="PlayNextOrLoop()" onclick="PlayTransform()"></audio>
+      </div>
     </div>
-  </div>
-  <div class="backBtn">
-    <button style="border-radius: 10px; border-style: hidden;" onclick="backVoiceRoom()">Go Back To Voice Room</button>
-  </div>
-  <footer id="page-footer" class="bg-dark style22">
-		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
-		<div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
-	</footer>
+    <div class="swiper-container gallery-thumbs">
+      <div id="DisconnectNegativityChars" class="swiper-wrapper" style="visibility:hidden;">
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/cryBaby.gif)" onclick="switchViewToFaceVoice('Cry Baby')"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/dramaQueen.gif)" onclick="switchViewToFaceVoice('Drama Queen')"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/bossyBoss.gif)" onclick="switchViewToFaceVoice('Control Freak')"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/chillPill.gif)" onclick="switchViewToFaceVoice('Chill Pill')"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/saint.gif)" onclick="switchViewToFaceVoice('The Saint')"></div>
+      </div>
+      <div id="PitchIdeaChars" class="swiper-wrapper" style="visibility: hidden;">
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/chillPill.gif)" onclick="switchViewToFaceVoice('Chill Pill')"></div>
+        <div class="swiper-slide" style="background-image:url(../assets/mobile/smallImages/saint.gif)" onclick="switchViewToFaceVoice('The Saint')"></div>
+      </div>
+    </div>
+    <div class="backBtn">
+      <button style="border-radius: 10px; border-style: hidden;" onclick="backVoiceRoom()">Take me Home</button>
+    </div>
+    <footer id="page-footer" class="style22">
+      <div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
+      <div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
+    </footer>
+  
   <!-- Swiper JS -->
   <script src="../js/swiper-bundle.min.js"></script>
 

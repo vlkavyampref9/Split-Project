@@ -198,7 +198,7 @@ function createDownloadLink(blob) {
 		if(document.getElementById("recordingsList")!=null){
 			document.getElementById("CharacterAssignPageLoadTriggerButton").onclick = function () {
 				window.onbeforeunload = null;
-				if(room == 'disconnectnegativity'){
+				if(room == 'disconnectnegativity' || room == 'pitchyouridea' ){
 					window.location.href = 'closure.html';
 				}
 				else{

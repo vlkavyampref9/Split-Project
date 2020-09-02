@@ -1,3 +1,4 @@
+
 var CharacterList =
 [{
     character: "Drama Queen",
@@ -175,7 +176,26 @@ function backVoiceRoom(){
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  switchViewToFaceVoice("Cry Baby");
+      
+   if(localStorage.getItem("SelectedTheme") == "disconnectnegativity")
+  {
+    document.getElementById("DisconnectNegativityChars").style.visibility = "visible";
+    document.getElementById("DisconnectNegativityCharsBigGif").style.visibility = "visible";   
+    document.getElementById("charName").innerHTML = "Distance the voice";
+    switchViewToFaceVoice("Cry Baby");  
+     
+  }  
+  else {
+    document.getElementById("PitchIdeaChars").style.visibility = "visible";
+    document.getElementById("PitchIdeaCharsBigGif").style.visibility = "visible"; 
+    document.getElementById("DisconnectNegativityChars").style.display = "none";
+    document.getElementById("DisconnectNegativityCharsBigGif").style.display = "none";
+    document.getElementById("charName").innerHTML = "Elevate your pitch";
+    switchViewToFaceVoice("Chill Pill");    
+  }
+
+ 
+
 });
 
 
