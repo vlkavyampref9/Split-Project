@@ -12,7 +12,7 @@ var mainApp = {};
         }
         else{
             uid = null;
-            //window.location.replace("../index.html");
+            window.location.replace("../index.html");
         }
     });
     function logOut(){
