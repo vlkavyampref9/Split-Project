@@ -22,11 +22,12 @@ h3.section-title {
 	font-weight: 400;
 }
 #features i {
-	background: #f9f9f9;
-    width: 124px;
+	    background: #f9f9f9;
+        width: 124px;
     border-radius: 50%;
     height: 124px;
     line-height: 124px;
+    border-radius: 50%;
 }
 #features h5 {
 	color: #1b99b9;
@@ -47,11 +48,14 @@ h3.section-title {
     -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
             box-shadow: 0 2px 10px 1px rgba(0,0,0,.2);
 }
-#page-footer {width: 100%;padding: 15px 0;
-    font-size: 12px;position: relative;bottom: 0;/* margin-top: 100px */
+#page-footer {
+    padding: 15px 0 10px;
+	font-size: 12px;
+	margin-top: 5vh;
+	display: block;
 }
 #roomselectcontainer{
-	/* height: 500px */
+	height: 500px;
 }
 /*#recordButton1{
 	position: absolute;
@@ -72,14 +76,14 @@ h3.section-title {
 	width: 100%;
 	overflow: auto;
 }
-.style3 {
+.styleJokerRant {
 	height: 400px;
 	background-repeat: repeat-x;
 	background-size: cover;
 	background-attachment: scroll;
 	background-image: url("../assets/Gifs/JokerRant.gif");
 }
-.style4 {
+.styleFlyingThroughClouds {
 	height: 400px;
 	background-size: cover;
 	background-repeat: repeat-y;
@@ -87,7 +91,7 @@ h3.section-title {
 	border-style: none;
 	background-image: url("../assets/Gifs/RisingAbove.gif");
 }
-.style5 {
+.styleWhispersOfGreenSpaces {
 	height: 400px;
 	background-repeat: repeat-y;
 	background-attachment: scroll;
@@ -96,13 +100,41 @@ h3.section-title {
 	background-image: url("../assets/Gifs/WhispersOfGreenSpaces.gif");
 }
 
+.styleLightAtEndOfTunnel {
+	height: 400px;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;
+	background-size: cover;
+	background-image: url("../assets/Gifs/LightTunnel.gif");
+}
+
+.styleSpaceMaker {
+	height: 400px;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;
+	background-size: cover;
+	background-image: url("../assets/Gifs/ThirdEye.gif");
+}
+
+.styleWatchingWaves {
+	height: 400px;
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	border-style: none;
+	background-size: cover;
+	background-image: url("../assets/Gifs/WatchingWaves.gif");
+}
+
 .style60 {
-	height: 30vh;
-	background-repeat: no-repeat;
+	height: 400px;
+	background-repeat: repeat-y;
 	background-attachment: scroll;
 	border-style: none;	
 	background-position: center;
 	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .style60:hover {
@@ -160,7 +192,7 @@ div.card-body.style60:hover {
 
 .style49 {
 
-	background-image: url("../assets/Gifs/characters/Shakeup.gif");
+	background-image: url("../assets/Gifs/characters/bossyboss.gif");
 }
 
 .style50 {
@@ -181,7 +213,7 @@ div.card-body.style60:hover {
 	border-top-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
-	min-height: 60px;
+	font-family: Verdana, Geneva, sans-serif;
 }
 .style12 {
 	font-size: 1.5rem;
@@ -189,9 +221,7 @@ div.card-body.style60:hover {
 	border-top-right-radius: 2px;
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
-	/* height: 60px */
-	display: block;
-	min-height: 60px;
+	font-family: Verdana, Geneva, sans-serif;
 }
 .style13 {
 	font-size: 1.5rem;
@@ -200,42 +230,66 @@ div.card-body.style60:hover {
 	border-bottom-left-radius: 2px;
 	border-bottom-right-radius: 2px;
 }
-.style3:hover {
-	height: 400px;
-	background-image: url("../assets/Gifs/JokerRant.gif");
-	background-size: cover;
-	background-repeat: repeat-x;
-}
-div.card-body.style3 {
+
+div.card-body.styleJokerRant {
 	cursor: pointer;
 	opacity: 0.7;
 }
-div.card-body.style3:hover {
+div.card-body.styleJokerRant:hover {
 	opacity: 1;
 }
-div.card-body.style4 {
+div.card-body.styleFlyingThroughClouds {
 	cursor: pointer;
 	opacity: 0.7 ;
 }
-div.card-body.style4:hover {
+div.card-body.styleFlyingThroughClouds:hover {
 	opacity: 1 ;
 }
-div.card-body.style5 {
+div.card-body.styleWhispersOfGreenSpaces {
 	cursor: pointer;
 	opacity: 0.7 ;
 }
-div.card-body.style5:hover {
+div.card-body.styleWhispersOfGreenSpaces:hover {
 	opacity: 1 ;
 }
+
+div.card-body.styleLightAtEndOfTunnel {
+	cursor: pointer;
+	opacity: 0.7 ;
+}
+div.card-body.styleLightAtEndOfTunnel:hover {
+	opacity: 1 ;
+}
+
+div.card-body.styleSpaceMaker {
+	cursor: pointer;
+	opacity: 0.7 ;
+}
+div.card-body.styleSpaceMaker:hover {
+	opacity: 1 ;
+}
+
+div.card-body.styleWatchingWaves {
+	cursor: pointer;
+	opacity: 0.7 ;
+}
+div.card-body.styleWatchingWaves:hover {
+	opacity: 1 ;
+}
+
+
 #voiceroomvideo{
-	position: relative;
-	top: 0vh;width: 100vw;height: 100vh;
+	position: absolute;
+	top: 0vh;
+	width: 100vw;
+	height: 100vh;
 	z-index: 1;
-	   -o-object-fit: fill;
-	      object-fit: fill;
+	-o-object-fit: fill;
+	   object-fit: fill;
 }
 #controls{
-	position: absolute;bottom: 9vh;
+	position: absolute;
+	bottom: 9vh;
 	z-index: 19;
 	background-color: rgba(67, 59, 82, 0.3);
 	min-height: 15vh;
@@ -243,17 +297,17 @@ div.card-body.style5:hover {
 }
 
 .btnvoiceroom {
+	width: 15vw;
+	height: 15vw;
 	background-color: rgb(102, 87, 240);
 	border: none;
 	color: white;
 	padding: 0.5vw, 0.5vh;
-	font-size: 10px;
+	font-size: 2vw;
 	cursor: pointer;
 	margin: 1vw;
 	display: grid;	
 	z-index: 20;	
-	overflow: auto;	
-	min-width: 50px;	
 }
   
   /* background on mouse-over */
@@ -263,26 +317,24 @@ div.card-body.style5:hover {
 .btnvoiceroom:disabled{
 	  background-color: grey;
 	  color: palevioletred;
-	  min-height: 20px;
 }
 
 .resumebtnvoiceroom{
+	width: 5vw;
+	height: 5vw;
 	background-color: rgb(173, 113, 230);
 	border: none;
 	color: white;
 	padding: 0.5vw, 0.5vh;
-	font-size: 10px;
+	font-size: 0.7vw;
 	cursor: pointer;
 	margin: 1vw;
-	display: grid;
-	min-height: 20px;
-	min-width: 50px;	
+	display: grid;	
 }
 .iconvoiceroom{
-	color: white;
-	font-size: 20px;	
-	margin: 0.5vw;	
-	min-height: 20px;
+	color: white; 
+	font-size: 5vw;	
+	margin: 0.5vw;
 }
 .eyevoiceroom{
 	color: white; 
@@ -292,31 +344,34 @@ div.card-body.style5:hover {
 }
 .btnvoiceroom:disabled .iconvoiceroom{
 	color: palevioletred; 
-	font-size: 20px;	
+	font-size: 5vw;	
 	margin: 0.5vw;
 }
 
 .mutebtnvoiceroom{
+	width: 15vw;
+	height: 15vw;
 	background-color: rgb(173, 113, 230);
 	border: none;
-	color: white;padding: 0.5vw, 0.5vh;
-	font-size: 10px;/* cursor: pointer */
+	color: white;
+	padding: 0.5vw, 0.5vh;
+	font-size: 2vw;
+	cursor: pointer;
 	margin: 1vw;
-	display: grid;
-	min-width: 50px;	
+	display: grid;	
 }
 #studioView{
 	position: absolute;
 	top: 5vh;
-	left: 1vw;
+	left: 0vw;
 	z-index: 20;
 	background-color: rgba(67, 59, 82, 0.3);
 	width: auto;
 	height: auto;
-	   -o-object-fit: contain;
-	      object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 	min-height: 20vh;
-	min-width: 45vw;
+	min-width: 100vw;
 	max-height: 70vh;	
 	overflow-y: scroll;
 }
@@ -364,40 +419,45 @@ div.card-body.style5:hover {
 	opacity: 0.3;
 } 
 
-.audioRecordedSection{
-	display: table-row;
-	vertical-align: middle;
-}
-
 .audioRecordedTrack{
-	width: 30vw;
+	width: 50vw;
+	margin-bottom: 2vh;
 	display: table-cell;
 }
 
-.audioDownloadButton{
-	font-size: 1vw;
-	color: white;
-	padding: 2px;
-	display: table-cell;
+#recordingsList{
+	position: relative; 
+	top: 3vh; 
+	margin-bottom: 5vh;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 #CharacterAssignPageLoadTriggerButton{
 	position: relative;
-    left: 10vw;
-    top: 1.5vh;
+    width: 30vw;
+    height: 10vh;
+    font-size: 2vw;
+}
+
+#InspireMeTriggerButton{
+		position: relative;
+		width: 30vw;
+		height: 10vh;
+		font-size: 2vw;
 }
 
 #MyVoiceCharacter{
-	min-width: 50vw;
+	min-width: 70vw;
 	min-height: 50vh;
-	width: 50vw;
+	width: 70vw;
 	height: 50vh;
 	position: relative;
 	background-color:white;
 	background-position: center;
 	background-size: contain;
-	background-repeat: no-repeat;
-	left: 25vw;
+	background-repeat: no-repeat;	
 }
 
 .style6 {
@@ -406,84 +466,327 @@ div.card-body.style5:hover {
 }
 
 .style7 {
-	height: 462px;
-	/* margin-top: 30px */
-	/* margin-bottom: 30px */
-}
-
-#roomselectionindex {
-}
-
-.style8 {position: static;
-	position: -webkit-sticky;
-	background-attachment: scroll;
+	font-family: fantasy;
 }
 
 .style9 {
-	float: none;
-	clear: none;
-	background-size: auto;
-	position: relative;
-}
+	position: fixed;
+	bottom: 5vh;}
 
-@media (min-width: 576px) {
-
-.btnvoiceroom {
-		overflow: visible;
-	}
-
-.rowSize {
-		min-height: 10vh;
-	}
+.style10 {
+	clear: both;
+	position: fixed;
+	left: 25vw;
+	right: 25vw;
 }
 
 .style14 {
-	height: 15vh;
-}
-
-@media (min-width: 768px) {
-
-.style14 {
-	height: 15vh;
-}
+	position: fixed;
+	bottom: 0vh;
 }
 
 .style15 {
-	display: block;
+	position: relative;
 }
 
 .style16 {
-	max-width: 720px;
+	min-height: 50vh;
+}
+
+.style17 {
+	position: relative;
+	left: 25vw;
+	right: 25vh;
+}
+
+.style18 {
+	position: relative;
+	top: 2vh;
+}
+
+.style19 {
+	position: relative;
+	left: 20vw;
+	right: 20vw;
 }
 
 @media (min-width: 1200px) {
 
-.style10 {
-	position: relative;
-	bottom: 10px;
+.style17 {
+		position: static;
+	}
+
+.style19 {
+		position: static;
+	}
+
+.style30 {
+		position: fixed;
+		top: 10%;
+		z-index: 20;
+		background-color: rgba(0, 0, 0, 0.76);
+	}
+
+.style31 {
+		width: 10vw;
+		height: 5vh;
+		position: static;
+	}
+
+.style34 {
+		width: auto;
+		min-width: 40vw;
+		min-height: 10vh;
+	}
+   .style5 {
+		font-size: 2vw;
+	}
+   .style7 {
+		text-align: center;
+		color: #060d8c;
+	}
 }
 
-}
-
-.style18 {
-	 position: absolute;
-}
-
+@media (min-width: 992px) {
 
 .style20 {
-	padding-top: 0px;
+		position: static;
+	}
+
+.style17 {
+		position: static;
+	}
+
+.style18 {
+		position: static;
+	}
+
+.style19 {
+		position: static;
+		float: none;
+	}
+
+.btnvoiceroom {
+		width: 5vw;
+		height: 5vw;
+		font-size: 0.7vw;
+	}
+
+.mutebtnvoiceroom {
+		width: 5vw;
+		height: 5vw;
+		font-size: 0.7vw;
+	}
+
+.iconvoiceroom {
+		font-size: 2vw;
+	}
+
+.btnvoiceroom:disabled .iconvoiceroom{	 
+	font-size: 2vw;		
+}
+
+.style15 {
+		position: static;
+	}
+
+.style34 {
+		width: auto;
+		min-width: 40vw;
+	}
+}
+
+.style21 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 3em;
+}
+
+.style22 {
+	position: -webkit-sticky;
+	position: sticky;
+	bottom: 0vh;
+}
+
+.style23 {
+	position: fixed;
+	bottom: 0vh;
+}
+
+.style24 {
+	position: static;
+}
+
+.style25 {
+	position: static;
+	position: static;
+}
+
+.style26 {
+	color: #000;
+	background-color: #1a0202;
+}
+
+.style27 {
+	background-color: #170101;
+}
+
+.style28 {
+	min-width: 100%;
+	min-height: 100%;}
+
+.style29 {
+	position: relative;
+	position: relative;
+	position: -webkit-sticky;
+	position: relative;
+}
+
+.style30 {
+	position: fixed;
+}
+
+.style32 {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.style33 {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.style34 {
+	min-width: 60vw;
+	margin-bottom: 5vh;
+	width: 90vw;
+}
+
+.style35 {
+	margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+
+.style19 {
+		position: relative;
+		left: 25vw;
+	}
+
+.style12 {
+		overflow: auto;
+	}
+}
+
+@media (min-width: 576px) {
+
+.style19 {
+		left: 25vw;
+		position: static;
+	}
+
+.style12 {
+		overflow: auto;
+	}
+}
+
+.style36 {
+	width: 100vw;
+	min-width: 100vw;
+}
+
+#cuecanvas{
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+	background-color: black;
+	z-index: 20;
+}
+
+.style3 {
+	background-color: #d91d1d;
+}
+
+.style4 {
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	font-size: 4vw;
+	text-align: center;
 }
 
 
-.rowSize {
-	min-height: 10vh;
+.scroll-up {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+ background: yellow;
+ color: orange;
+ border: 1px solid orange;
+}
+.scroll-up p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */	
+ -webkit-transform:translateY(100%);	
+         transform:translateY(100%);
+ /* Apply animation to this element */
+ -webkit-animation: scroll-down 25s linear;
+         animation: scroll-down 25s linear;
+}
+/* Move it (define the animation) */
+@-webkit-keyframes scroll-down {
+ 0%   { /* Browser bug fix */ /* Browser bug fix */
+ -webkit-transform: translateY(100%);
+         transform: translateY(100%); 		
+ }
+ 100% { /* Browser bug fix */ /* Browser bug fix */
+ -webkit-transform: translateY(20%);
+         transform: translateY(20%); 
+ }
+}
+@keyframes scroll-down {
+ 0%   { /* Browser bug fix */ /* Browser bug fix */
+ -webkit-transform: translateY(100%);
+         transform: translateY(100%); 		
+ }
+ 100% { /* Browser bug fix */ /* Browser bug fix */
+ -webkit-transform: translateY(20%);
+         transform: translateY(20%); 
+ }
 }
 
+.scroll-down {
+	overflow: hidden;
+	position: relative;	
+   }
+   .scroll-down p {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	line-height: 50px;
+	text-align: center;
+	/* Starting position */	
+	-webkit-transform:translateY(-120%);	
+	        transform:translateY(-120%);
+	/* Apply animation to this element */
+	-webkit-animation: scroll-down 35s linear;
+	        animation: scroll-down 35s linear;
+   }
+   /* Move it (define the animation) */
+   @keyframes scroll-down {
+	0%   { /* Browser bug fix */ /* Browser bug fix */
+	-webkit-transform: translateY(-120%);
+	        transform: translateY(-120%); 		
+	}
+	100% { /* Browser bug fix */ /* Browser bug fix */
+	-webkit-transform: translateY(100%);
+	        transform: translateY(100%); 
+	}
+   }
 
-.cardPad {
-	margin-top: 20px
-	/* min-height: 10px */  
-}
 
 
 

@@ -28,24 +28,26 @@
 </head>
 
 <body is="dmx-app" id="index">
-	<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light">
+	<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light justify-content-md-center flex-md-wrap align-content-md-around">
 		<a class="navbar-brand mt-0 mb-0 ml-0 mr-0 pt-0 pb-0 pl-0 pr-0" href="#"><img src="assets/images/KoreHealth.png" class="img-fluid ml-0" width="120" height="120" wappler-command="updateImage"></a>
 	</nav>
-	<header id="page-header" class="pb-md-5 pb-5 pb-lg-0">
+	<header id="page-header" class="pb-md-5 pb-5 pb-lg-0 style20">
 		<div class="container">
-			<div class="row row-cols-lg-3">
-				<div id="header-text" class="order-2 order-sm-2 order-md-1 col-12 col-sm-12 col-md-7 col-lg-6 text-lg-center colSize">
-					<h1 class="text-lg-left display-2">Voices in your head</h1>
-					<p class="lead w-100 h-50 text-center display-4 text-lg-justify mt-lg-auto">Express your Inner Voices. Transform the way you feel.</p>
-					<button class="btn btn-primary font-weight-bold text-uppercase text-lg-center btn-lg" style="font-size: 2em;" onclick="SwitchViewToVoiceRoom()">Let's get started</button>
+			<div class="row row-cols-lg-3 justify-content-around row-cols-6">
+
+				<div id="header-text" class="order-2 order-sm-2 col-12 col-sm-12 text-lg-center col-xl col-lg-12 offset-md-0 order-md-1 col-md-11 style16">
+					<video autoplay muted loop class="img-fluid w-50 h-auto style17" src="assets/videos/letoutvoicestheme.mp4" preload="auto"></video>
+					<p style="font-size: 3.5em;" class="display-4 text-lg-justify mt-lg-auto w-auto h-auto flex-md-shrink-1 lead text-center style18">Express your Inner Voices. Transform the way you feel.</p>
+					<button class="btn btn-primary font-weight-bold text-uppercase text-lg-center btn-lg text-center mb-xl-4 style19" style="font-size: 2em; margin-top: 2vh;" onclick="SwitchViewToVoiceRoom()">Let's get started</button>
 				</div>
-				<div id="header-img" class="order-1 order-sm-1 order-md-2 col-12 col-sm-12 col-md-5 col-lg-6"> <img class="img-fluid" src="assets/images/Innerparts.jpg">
-				</div>
+
+
 			</div>
 		</div>
 	</header>
-	<footer id="page-footer" class="bg-dark style15">
-		<div class="container"> <span class="text-muted">Copyright www.split.com</span> </div>
+	<footer id="page-footer" class="bg-dark style15 mt-lg-0">
+		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
+		<div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
 	</footer>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

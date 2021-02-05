@@ -24,49 +24,76 @@
 	<script src="../dmxAppConnect/dmxMediumEditor/dmxMediumEditor.js" defer=""></script>
 	<link rel="stylesheet" href="../dmxAppConnect/dmxMediumEditor/themes/default.css" />
 	<script src="../dmxAppConnect/dmxVideo/dmxVideo.js" defer=""></script>
+	<script src="../dmxAppConnect/dmxRouting/dmxRouting.js" defer=""></script>
 </head>
 
 <body id="roomselectionindex" is="dmx-app" onload="focusToVoiceRoom()" class="style2">
-	<div id="VoiceRoom" class="container-fluid style1">
+	<div class="container-fluid style1">
 		<div class="row">
 			<div class="col align-self-start">
-				<h1 class="display-3 font-weight-bold text-lg-center mh-100 mb-lg-5 text-center mw-100 text-light bg-primary">Let out the voices in your head !</h1>
+				<h1 class="font-weight-bold text-lg-center mh-100 mb-lg-5 text-center mw-100 text-light bg-primary style21">
+					Let out the voices in your head !</h1>
 			</div>
 		</div>
-		<div class="row mb-5 pb-0" id="roomselectcontainer" is="dmx-masonry">
-			<div class="col">
+		<div class="row mb-5 pb-0 row-cols-sm-3" id="roomselectcontainer" is="dmx-masonry">
+			<div class="col-sm-4 col-12 col-lg-4">
 				<div class="card style7">
-					<div class="card-header text-center font-weight-bolder border-dark rounded-lg text-light style11 text-capitalize bg-primary">The Joker Rant</div>
-					<div class="card-body style3" onclick="SwitchViewToAmbienceRoom('joker')">
+					<div class="card-header text-light text-center style12 text-capitalize bg-primary">The Joker Rant</div>
+					<div class="card-body styleJokerRant" onclick="SwitchViewToAmbienceRoom('joker')">
 					</div>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-sm-4 col-12 col-lg-4">
 				<div class="card style7">
-					<div class="card-header text-light text-center font-weight-bolder style12 text-capitalize bg-primary">Rising Above</div>
-					<div class="card-body style4" onclick="SwitchViewToAmbienceRoom('clouds')">
+					<div class="card-header text-light text-center style12 text-capitalize bg-primary">Rising Above</div>
+					<div class="card-body styleFlyingThroughClouds" onclick="SwitchViewToAmbienceRoom('clouds')">
 					</div>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-sm-4 col-12 col-lg-4">
 				<div class="card style7">
-					<div class="card-header text-light text-center font-weight-bolder style12 text-capitalize bg-primary">Whispers of Green Spaces</div>
-					<div class="card-body style5" onclick="SwitchViewToAmbienceRoom('greenspace')">
+					<div class="card-header text-light text-center style12 text-capitalize bg-primary">Whispers of Green Spaces</div>
+					<div class="card-body styleWhispersOfGreenSpaces" onclick="SwitchViewToAmbienceRoom('greenspace')">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-12 col-lg-4">
+				<div class="card style7">
+					<div class="card-header text-light text-center style12 text-capitalize bg-primary">Light at the end of the tunnel</div>
+					<div class="card-body styleLightAtEndOfTunnel" onclick="SwitchViewToLightTunnelRoom('lighttunnel')">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-12 col-lg-4">
+				<div class="card style7">
+
+					<div class="card-header text-light text-center style12 text-capitalize bg-primary">Space Maker</div>
+					<div class="card-img-overlay style5 bg-warning">COMING SOON</div>
+					<div class="card-body styleSpaceMaker">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-12 col-lg-4">
+				<div class="card style7">
+					<div class="card-header text-light text-center style12 text-capitalize bg-primary">Watching the waves</div>
+					<div class="card-body styleWatchingWaves" onclick="SwitchViewToAmbienceRoom('watchingwaves')">
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
+	<footer id="page-footer" class="bg-dark style3 fixed-bottom">
+		<div class="container"> <span class="text-muted">Copyright www.gokore.eu</span> </div>
+		<div class="container"> <span class="text-muted">We don’t store your data, period. We physically can’t. We have nowhere to store it. All audio recordings are available for download and storage, locally on your disk/phone.</span> </div>
+	</footer>
 
-		<footer id="page-footer" class="bg-dark">
-			<div class="container"> <span class="text-muted">Copyright www.split.com</span> </div>
-		</footer>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="../bootstrap/4/js/popper.min.js"></script>
-		<script src="../bootstrap/4/js/bootstrap.min.js"></script>
-		<script src="../js/app.js"></script>
-		<script src="../js/roomselection.js"></script>		
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="../bootstrap/4/js/popper.min.js"></script>
+	<script src="../bootstrap/4/js/bootstrap.min.js"></script>
+	<script src="../js/app.js"></script>
+	<script src="../js/roomselection.js"></script>
 </body>
 
 </html>

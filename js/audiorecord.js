@@ -131,10 +131,7 @@ function stopRecording() {
 function createDownloadLink(blob) {
 	
 	var url = URL.createObjectURL(blob);
-	var au = document.createElement('audio');
-	
-	var li = document.createElement('li');
-    var link = document.createElement('a');
+	var au = document.createElement('audio');	
 
 	//name of .wav file to use during upload and download (without extension)
 	var filename = prompt("Please name your recording", "Recording1");
@@ -149,25 +146,13 @@ function createDownloadLink(blob) {
     var numberofrecordings = listOfRecordings.push(url);
 	var localStorageName = "record" + numberofrecordings.toString();
 	localStorage.removeItem(localStorageName);
-	localStorage.setItem(localStorageName, true);	
-	
-	//save to disk link
-	link.href = url;
-	link.download = filename+".mp3"; //download forces the browser to download the file using the  filename
-	link.innerHTML = "Download";
-	link.className = "audioDownloadButton";
+	localStorage.setItem(localStorageName, true);
 
-	//add the new audio element to li
-	li.className = "audioRecordedSection";
-	li.appendChild(au);
-	li.appendChild(link);
-	StoreToDataBase("RecordingsStore", "recordingName", localStorageName, blob, numberofrecordings);
-	
-	//storeBlobToLocalStorage(blob, url, localStorageName);
-	//transformVoice(blob, 1.9, localStorageName+"transform");
-	//add the li element to the ol
-  document.getElementById("recordingsList").appendChild(li);
-  console.log(recordingsList);
+	document.getElementById("recordingsList").appendChild(au);
+
+	StoreToDataBase("RecordingsStore", "recordingName", localStorageName, blob, numberofrecordings);	
+  
+  	console.log(recordingsList);
 }
 
 
